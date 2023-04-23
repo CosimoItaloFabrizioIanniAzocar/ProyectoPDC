@@ -5,7 +5,6 @@ import com.proyectotesis.proyectopdc.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -31,7 +30,7 @@ public class UsuarioController {
     return usuarioDao.getUsuarios();
     }
 
-    @RequestMapping(value = "api/usuarios", method = RequestMethod.POST)
+    @RequestMapping(value = "api/registrar", method = RequestMethod.POST)
     public void registrarUsuarios(@RequestBody Usuario usuario){
         usuarioDao.registrarUsuarios(usuario);
     }

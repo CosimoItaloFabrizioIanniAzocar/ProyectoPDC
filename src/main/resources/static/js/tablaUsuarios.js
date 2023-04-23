@@ -22,7 +22,8 @@ async function cargarUsuarios (){
     for (let usuario of usuariosjson) {
         let botonEliminar = '<button type="button" class="btn btn-danger" onclick="eliminarUsuario('+usuario.id+')">Eliminar</button>';
 
-        let usuariohtml = '<tr> <td>' + usuario.id + '</td> <td>' + usuario.nombre +
+        let usuariohtml = '<tr> <td>' + usuario.id +
+            '</td> <td>' + usuario.nombre +
             '</td> <td>'+usuario.password+
             '</td> <td>'+botonEliminar+
             '</td > </tr>';

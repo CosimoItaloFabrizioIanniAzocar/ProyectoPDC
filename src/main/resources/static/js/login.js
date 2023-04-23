@@ -3,20 +3,14 @@ $(document).ready(function() {
 
 });
 
-async function registrarUsuarios (){
+async function iniciarSesion (){
 
     let datos = {};
     datos.nombre = document.getElementById('txtnombre').value;
     datos.password = document.getElementById('txtpassword').value;
 
-    let repetirPassword = document.getElementById('txtrepetirpassword').value;
 
-    if(datos.password != repetirPassword){
-        alert("Las contraseñas no coinciden");
-        return;
-    }
-
-    const request = await fetch("api/registrar", {
+    const request = await fetch("api/login", {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -24,6 +18,12 @@ async function registrarUsuarios (){
         },
         body: JSON.stringify(datos)
     });
+    const respuesta = await request.text();
+
+    if (respuesta == "OK"){
+        window.location.href = "usuarios.html";
+       }else{
+        alert("Credenciales incorrectas, por favor intente nuevamente");
+    }
 
 }
-
