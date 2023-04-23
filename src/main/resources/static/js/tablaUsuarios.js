@@ -38,7 +38,7 @@ async function cargarUsuarios (){
 
 async function eliminarUsuario(id){
 
-    if(!confirm("¿Está seguro de eliminar el usuario?")){
+    if(!confirm("¿Está segur@ de eliminar el usuario?")){
         return;
     }
     const request = await fetch("api/usuarios/"+id, {
