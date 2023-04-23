@@ -23,8 +23,13 @@ public class UsuarioDaoimp implements UsuarioDao{
     }
 
     @Override
-    public void eliminar(long id) {
+    public void eliminar(int id) {
         Usuario usuario = entityManager.find(Usuario.class,id);
         entityManager.remove(usuario);
+    }
+
+    @Override
+    public void registrarUsuarios(Usuario usuario) {
+        entityManager.merge(usuario);
     }
 }

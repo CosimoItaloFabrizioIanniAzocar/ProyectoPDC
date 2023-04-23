@@ -3,10 +3,7 @@ package com.proyectotesis.proyectopdc.controllers;
 import com.proyectotesis.proyectopdc.dao.UsuarioDao;
 import com.proyectotesis.proyectopdc.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +31,11 @@ public class UsuarioController {
     return usuarioDao.getUsuarios();
     }
 
+    @RequestMapping(value = "api/usuarios", method = RequestMethod.POST)
+    public void registrarUsuarios(@RequestBody Usuario usuario){
+        usuarioDao.registrarUsuarios(usuario);
+    }
+
     @RequestMapping("api/prueba1")
     public Usuario editarUsuario(){
 
@@ -46,7 +48,7 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "api/usuarios/{id}",method = RequestMethod.DELETE)
-    public void eliminarUsuario(@PathVariable long id){
+    public void eliminarUsuario(@PathVariable int id){
 
         usuarioDao.eliminar(id);
 
