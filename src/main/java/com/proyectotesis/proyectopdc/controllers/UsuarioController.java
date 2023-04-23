@@ -5,6 +5,7 @@ import com.proyectotesis.proyectopdc.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioDao usuarioDao;
 
-    @RequestMapping("/prueba/{id}")
+    @RequestMapping("api/usuarios/{id}")
     public Usuario getUser(@PathVariable int id){
 
         Usuario usuario = new Usuario();
@@ -28,12 +29,12 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping("/usuarios")
+    @RequestMapping("api/usuarios")
     public List<Usuario> getUsuarios(){
     return usuarioDao.getUsuarios();
     }
 
-    @RequestMapping("/prueba1")
+    @RequestMapping("api/prueba1")
     public Usuario editarUsuario(){
 
         Usuario usuario = new Usuario();
@@ -44,18 +45,14 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping("/prueba2")
-    public Usuario eliminarUsuario(){
+    @RequestMapping(value = "api/usuarios/{id}",method = RequestMethod.DELETE)
+    public void eliminarUsuario(@PathVariable long id){
 
-        Usuario usuario = new Usuario();
+        usuarioDao.eliminar(id);
 
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        return usuario;
     }
 
-    @RequestMapping("/prueba3")
+    @RequestMapping("api/prueba3")
     public Usuario buscarUsuario(){
 
         Usuario usuario = new Usuario();
