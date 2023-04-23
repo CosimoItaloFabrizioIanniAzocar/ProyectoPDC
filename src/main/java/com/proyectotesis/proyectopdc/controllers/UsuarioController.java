@@ -1,6 +1,8 @@
 package com.proyectotesis.proyectopdc.controllers;
 
+import com.proyectotesis.proyectopdc.dao.UsuarioDao;
 import com.proyectotesis.proyectopdc.models.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +14,8 @@ import java.util.List;
 
 public class UsuarioController {
 
+    @Autowired
+    private UsuarioDao usuarioDao;
 
     @RequestMapping("/prueba/{id}")
     public Usuario getUser(@PathVariable int id){
@@ -26,27 +30,7 @@ public class UsuarioController {
 
     @RequestMapping("/usuarios")
     public List<Usuario> getUsuarios(){
-
-        List<Usuario> usuarios= new ArrayList<>();
-        Usuario usuario = new Usuario();
-        usuario.setId(1);
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        Usuario usuario2 = new Usuario();
-        usuario2.setId(2);
-        usuario2.setNombre("Maria");
-        usuario2.setPassword("5678");
-
-        Usuario usuario3 = new Usuario();
-        usuario3.setId(3);
-        usuario3.setNombre("Catalina");
-        usuario3.setPassword("9876");
-
-        usuarios.add(usuario);
-        usuarios.add(usuario2);
-        usuarios.add(usuario3);
-        return usuarios;
+    return usuarioDao.getUsuarios();
     }
 
     @RequestMapping("/prueba1")
