@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 async function cargarUsuarios (){
 
-    const request = await fetch("/prueba/123", {
+    const request = await fetch("/usuarios", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -16,6 +16,18 @@ async function cargarUsuarios (){
       },
     });
     const usuariosjson = await request.json();
-    console.log(usuariosjson);
 
+    let listaUsuarios = "";
+    for (let usuario of usuariosjson) {
+
+
+        let usuariohtml = '<tr> <td>' + usuario.id + '</td> <td>' + usuario.nombre + '</td> <td>'+usuario.password+'</td > </tr>';
+
+
+        listaUsuarios += usuariohtml;
+        console.log(usuariosjson);
+
+        document.querySelector("#tablaUsuarios").innerHTML = listaUsuarios;
+
+    }
 }

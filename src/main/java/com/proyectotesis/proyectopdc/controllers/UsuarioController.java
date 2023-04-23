@@ -14,7 +14,7 @@ public class UsuarioController {
 
 
     @RequestMapping("/prueba/{id}")
-    public Usuario getUser(@PathVariable long id){
+    public Usuario getUser(@PathVariable int id){
 
         Usuario usuario = new Usuario();
         usuario.setId(id);
@@ -24,7 +24,7 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping("/prueba")
+    @RequestMapping("/usuarios")
     public List<Usuario> getUsuarios(){
 
         List<Usuario> usuarios= new ArrayList<>();

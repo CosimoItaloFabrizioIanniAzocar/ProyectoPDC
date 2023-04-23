@@ -4,7 +4,7 @@ package com.proyectotesis.proyectopdc.models;
 
 public class Usuario {
 
-    private long id;
+    private int id;
     private String nombre;
 
     private String password;
@@ -13,7 +13,7 @@ public class Usuario {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
