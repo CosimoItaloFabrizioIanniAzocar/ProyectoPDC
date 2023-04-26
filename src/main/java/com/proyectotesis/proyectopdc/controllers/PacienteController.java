@@ -3,7 +3,6 @@ package com.proyectotesis.proyectopdc.controllers;
 
 import com.proyectotesis.proyectopdc.dao.PacienteDao;
 import com.proyectotesis.proyectopdc.models.Paciente;
-import com.proyectotesis.proyectopdc.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +12,16 @@ import java.util.List;
 public class PacienteController {
 
 
+    @Autowired
     private PacienteDao pacienteDao;
-    @RequestMapping("api/pacientes")
-    public List<Usuario> getPacientes(){
-        return pacienteDao.getPacientes();
+
+    @RequestMapping("api/prueba2")
+    public List<String> prueba2(){
+
+        return List.of("Probando","el","controlador","de","pacientes");
     }
+    @RequestMapping("api/getPacientes")
+    public List<Paciente> getPacientes(){return pacienteDao.getPacientes();}
 
     @RequestMapping(value = "api/registrarPaciente", method = RequestMethod.POST)
     public void registrarPaciente(@RequestBody Paciente paciente){
@@ -29,13 +33,13 @@ public class PacienteController {
         pacienteDao.eliminarPaciente(id);
     }
 
-    @RequestMapping("api/prueba1")
+    @RequestMapping("api/editarPaciente")
     public String editarPaciente(){
 
         return "Metodo editar por hacer";
     }
 
-    @RequestMapping("api/prueba3")
+    @RequestMapping("api/buscarPaciente")
     public String buscarPaciente(){
 
         return "Metodo Buscar por hacer";

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Table(name = "paciente")
 @Entity
 
 public class Paciente {
@@ -14,31 +15,31 @@ public class Paciente {
     @Getter@Setter @Column(name = "IDpaciente")
     private int idPaciente;
 
-    @Getter@Setter @Column(name = "nombrePaciente")
+    @Getter@Setter @Column(name = "nombre")
     private String nombrePaciente;
 
-    @Getter@Setter @Column(name = "edadPaciente")
+    @Getter@Setter @Column(name = "edad")
     private int edadPaciente;
 
-    @Getter@Setter @Column(name = "rutPaciente")
-    private int rutPaciente;
+    @Getter@Setter @Column(name = "rut")
+    private String rutPaciente;
 
-    @Getter@Setter @Column(name = "pasaportePaciente")
-    private int pasaportePaciente;
+    @Getter@Setter @Column(name = "pasaporte")
+    private String pasaportePaciente;
 
-    @Getter@Setter @Column(name = "partidaNacimientoPaciente")
-    private int partidaNacimientoPaciente;
+    @Getter@Setter @Column(name = "partnacimiento")
+    private String partidaNacimientoPaciente;
 
-    @Getter@Setter @Column(name = "sexoPaciente")
+    @Getter@Setter @Column(name = "sexo")
     private char sexoPaciente;
 
-    @Getter@Setter @Column(name = "direccionPaciente")
+    @Getter@Setter @Column(name = "direccion")
     private String direccionPaciente;
 
-    @Getter@Setter @Column(name = "telefonoPaciente")
-    private int telefonoPaciente;
+    @Getter@Setter @Column(name = "telefono")
+    private String telefonoPaciente;
 
-    @Getter@Setter @Column(name = "emailPaciente")
+    @Getter@Setter @Column(name = "email")
     private String emailPaciente;
 
 }

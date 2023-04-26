@@ -2,7 +2,6 @@ package com.proyectotesis.proyectopdc.dao;
 
 
 import com.proyectotesis.proyectopdc.models.Paciente;
-import com.proyectotesis.proyectopdc.models.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -17,7 +16,7 @@ public class PacienteDaoimp implements PacienteDao{
     @PersistenceContext
     private EntityManager entityManager;
     @Override
-    public List<Usuario> getPacientes() {
+    public List<Paciente> getPacientes() {
         String query = "FROM Paciente";
         return entityManager.createQuery(query).getResultList();
     }
@@ -29,7 +28,7 @@ public class PacienteDaoimp implements PacienteDao{
     }
 
     @Override
-    public void registrarPacientes(Paciente paciente) {
+    public void registrarPacientes(Paciente paciente){entityManager.merge(paciente);}
 
-    }
+
 }
