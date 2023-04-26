@@ -14,17 +14,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioDao usuarioDao;
 
-    @RequestMapping("api/usuarios/{id}")
-    public Usuario getUser(@PathVariable int id){
-
-        Usuario usuario = new Usuario();
-        usuario.setId(id);
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        return usuario;
-    }
-
     @RequestMapping("api/usuarios")
     public List<Usuario> getUsuarios(){
     return usuarioDao.getUsuarios();
