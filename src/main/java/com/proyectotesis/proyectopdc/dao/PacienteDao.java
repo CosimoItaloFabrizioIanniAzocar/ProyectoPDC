@@ -13,9 +13,9 @@ public interface PacienteDao {
 
     void registrarPacientes(Paciente paciente);
 
-    Paciente getPaciente(int i);
+    Paciente buscarPaciente(int id);
 
-    void editarPaciente(Paciente paciente);
+    void editarPaciente(int id, Paciente paciente);
 }
 
 

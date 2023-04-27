@@ -31,10 +31,12 @@ public class PacienteController {
         pacienteDao.eliminarPaciente(id);
     }
 
-    @RequestMapping(value ="api/editarPaciente",method = RequestMethod.PUT)
-    public void editarPaciente(@RequestBody Paciente paciente){pacienteDao.editarPaciente(paciente);}
+    @RequestMapping(value ="api/editarPaciente/{id}",method = RequestMethod.PUT)
+    public void editarPaciente(@PathVariable int id, @RequestBody Paciente paciente){
+        paciente.setIdPaciente(id);
+        pacienteDao.editarPaciente(id, paciente);}
 
     @RequestMapping(value = "api/buscarPaciente/{id}",method = RequestMethod.GET)
-    public Paciente buscarPaciente(@PathVariable int id){return pacienteDao.getPaciente(id);}
+    public Paciente buscarPaciente(@PathVariable int id){return pacienteDao.buscarPaciente(id);}
 
 }

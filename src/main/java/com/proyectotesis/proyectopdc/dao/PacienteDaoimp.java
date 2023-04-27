@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -30,11 +31,14 @@ public class PacienteDaoimp implements PacienteDao{
     @Override
     public void registrarPacientes(Paciente paciente){entityManager.merge(paciente);}
 
-    public  Paciente getPaciente(int id){
+    public  Paciente buscarPaciente(int id){
         return entityManager.find(Paciente.class,id);
     }
 
     @Override
-    public void editarPaciente(Paciente paciente) {entityManager.merge(paciente);}
+    public void editarPaciente(@PathVariable int id, Paciente paciente) {
+        entityManager.find(Paciente.class, id);
+        entityManager.merge(paciente);
+    }
 
 }
