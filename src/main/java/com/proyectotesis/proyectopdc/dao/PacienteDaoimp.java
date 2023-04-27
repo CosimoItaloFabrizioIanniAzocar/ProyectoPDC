@@ -34,4 +34,7 @@ public class PacienteDaoimp implements PacienteDao{
         return entityManager.find(Paciente.class,id);
     }
 
+    @Override
+    public void editarPaciente(Paciente paciente) {entityManager.merge(paciente);}
+
 }

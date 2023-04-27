@@ -24,25 +24,17 @@ public class PacienteController {
     public List<Paciente> getPacientes(){return pacienteDao.getPacientes();}
 
     @RequestMapping(value = "api/registrarPaciente", method = RequestMethod.POST)
-    public void registrarPaciente(@RequestBody Paciente paciente){
-        pacienteDao.registrarPacientes(paciente);
-    }
+    public void registrarPaciente(@RequestBody Paciente paciente){pacienteDao.registrarPacientes(paciente);}
 
     @RequestMapping(value = "api/pacientes/{id}",method = RequestMethod.DELETE)
     public void eliminarPaciente(@PathVariable int id){
         pacienteDao.eliminarPaciente(id);
     }
 
-    @RequestMapping("api/editarPaciente")
-    public String editarPaciente(){
+    @RequestMapping(value ="api/editarPaciente",method = RequestMethod.PUT)
+    public void editarPaciente(@RequestBody Paciente paciente){pacienteDao.editarPaciente(paciente);}
 
-        return "Metodo editar por hacer";
-    }
-
-    @RequestMapping("api/buscarPaciente/{id}")
-    public Paciente buscarPaciente(@PathVariable int id){
-
-        return pacienteDao.getPaciente(id);
-    }
+    @RequestMapping(value = "api/buscarPaciente/{id}",method = RequestMethod.GET)
+    public Paciente buscarPaciente(@PathVariable int id){return pacienteDao.getPaciente(id);}
 
 }
