@@ -13,6 +13,7 @@ public interface PacienteDao {
 
     void registrarPacientes(Paciente paciente);
 
+    Paciente getPaciente(int i);
 }
 
 

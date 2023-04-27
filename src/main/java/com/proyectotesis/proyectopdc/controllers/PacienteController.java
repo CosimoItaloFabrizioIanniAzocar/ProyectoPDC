@@ -39,10 +39,10 @@ public class PacienteController {
         return "Metodo editar por hacer";
     }
 
-    @RequestMapping("api/buscarPaciente")
-    public String buscarPaciente(){
+    @RequestMapping("api/buscarPaciente/{id}")
+    public Paciente buscarPaciente(@PathVariable int id){
 
-        return "Metodo Buscar por hacer";
+        return pacienteDao.getPaciente(id);
     }
 
 }

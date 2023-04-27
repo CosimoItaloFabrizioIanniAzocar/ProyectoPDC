@@ -30,5 +30,8 @@ public class PacienteDaoimp implements PacienteDao{
     @Override
     public void registrarPacientes(Paciente paciente){entityManager.merge(paciente);}
 
+    public  Paciente getPaciente(int id){
+        return entityManager.find(Paciente.class,id);
+    }
 
 }
