@@ -21,20 +21,15 @@ public class PacienteDaoimp implements PacienteDao{
         String query = "FROM Paciente";
         return entityManager.createQuery(query).getResultList();
     }
-
     @Override
     public void eliminarPaciente(int id) {
         Paciente paciente = entityManager.find(Paciente.class,id);
         entityManager.remove(paciente);
     }
-
     @Override
     public void registrarPacientes(Paciente paciente){entityManager.merge(paciente);}
 
-    public  Paciente buscarPaciente(int id){
-        return entityManager.find(Paciente.class,id);
-    }
-
+    public  Paciente buscarPaciente(int id){return entityManager.find(Paciente.class,id);}
     @Override
     public void editarPaciente(@PathVariable int id, Paciente paciente) {
         entityManager.find(Paciente.class, id);
