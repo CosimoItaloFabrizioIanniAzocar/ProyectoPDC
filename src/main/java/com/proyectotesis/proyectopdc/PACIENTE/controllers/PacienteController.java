@@ -1,8 +1,8 @@
-package com.proyectotesis.proyectopdc.controllers;
+package com.proyectotesis.proyectopdc.PACIENTE.controllers;
 
 
-import com.proyectotesis.proyectopdc.dao.PacienteDao;
-import com.proyectotesis.proyectopdc.models.Paciente;
+import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
+import com.proyectotesis.proyectopdc.PACIENTE.dao.PacienteDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

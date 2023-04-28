@@ -1,7 +1,7 @@
-package com.proyectotesis.proyectopdc.controllers;
+package com.proyectotesis.proyectopdc.USUARIO.controllers;
 
-import com.proyectotesis.proyectopdc.dao.UsuarioDao;
-import com.proyectotesis.proyectopdc.models.Usuario;
+import com.proyectotesis.proyectopdc.USUARIO.models.Usuario;
+import com.proyectotesis.proyectopdc.USUARIO.dao.UsuarioDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

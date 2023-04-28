@@ -1,7 +1,7 @@
-package com.proyectotesis.proyectopdc.dao;
+package com.proyectotesis.proyectopdc.PACIENTE.dao;
 
 
-import com.proyectotesis.proyectopdc.models.Paciente;
+import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;

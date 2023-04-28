@@ -1,4 +1,4 @@
-package com.proyectotesis.proyectopdc.models;
+package com.proyectotesis.proyectopdc.PACIENTE.models;
 
 
 import jakarta.persistence.*;
