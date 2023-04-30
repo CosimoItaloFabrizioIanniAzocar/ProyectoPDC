@@ -1,6 +1,8 @@
 package com.proyectotesis.proyectopdc.PACIENTE.controllers;
 
 
+import com.proyectotesis.proyectopdc.CITA.dao.CitaDao;
+import com.proyectotesis.proyectopdc.CITA.models.Cita;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import com.proyectotesis.proyectopdc.PACIENTE.dao.PacienteDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ public class PacienteController {
 
     @Autowired
     private PacienteDao pacienteDao;
+
     @RequestMapping("api/getPacientes")
     public List<Paciente> getPacientes(){return pacienteDao.getPacientes();}
     @RequestMapping(value = "api/registrarPaciente", method = RequestMethod.POST)
@@ -28,4 +31,6 @@ public class PacienteController {
     @RequestMapping(value = "api/buscarPaciente/{id}",method = RequestMethod.GET)
     public Paciente buscarPaciente(@PathVariable int id){return pacienteDao.buscarPaciente(id);}
 
+    @RequestMapping(value = "api/citasPaciente/{id}",method = RequestMethod.GET)
+    public List<Cita> citasPaciente(@PathVariable int id) {return pacienteDao.citasPaciente(id);}
 }

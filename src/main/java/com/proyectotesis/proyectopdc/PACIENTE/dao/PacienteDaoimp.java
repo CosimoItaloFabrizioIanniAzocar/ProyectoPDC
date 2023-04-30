@@ -1,6 +1,6 @@
 package com.proyectotesis.proyectopdc.PACIENTE.dao;
 
-
+import com.proyectotesis.proyectopdc.CITA.models.Cita;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -34,6 +34,12 @@ public class PacienteDaoimp implements PacienteDao{
     public void editarPaciente(@PathVariable int id, Paciente paciente) {
         entityManager.find(Paciente.class, id);
         entityManager.merge(paciente);
+    }
+    @Override
+    public List<Cita> citasPaciente(int id) {
+        String query = "FROM Cita WHERE idPaciente = :id";
+        List<Cita> citas = entityManager.createQuery(query).setParameter("id", id).getResultList();
+        return citas;
     }
 
 }
