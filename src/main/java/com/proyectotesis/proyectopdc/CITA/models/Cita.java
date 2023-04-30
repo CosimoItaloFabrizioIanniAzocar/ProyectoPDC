@@ -16,7 +16,7 @@ public class Cita {
     @Getter@Setter @Column(name = "IDcita")
     private int idCita;
 
-    @Getter@Setter @Column(name = "ID_paciente")
+    @Getter@Setter @Column(name = "id_paciente")
     private int idPaciente;
 
     @Getter@Setter @Column(name = "fecha")
@@ -26,6 +26,6 @@ public class Cita {
     private String tipo;
 
     @Getter@Setter @Column(name = "estado")
-    private String estado;
+    private Boolean estado;
 
 }

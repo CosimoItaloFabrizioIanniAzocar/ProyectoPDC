@@ -10,5 +10,6 @@ public interface CitaDao {
     void registrarCita(Cita cita);
     Cita buscarCita(int id);
     void editarCita(int id, Cita cita);
+
 }
 
