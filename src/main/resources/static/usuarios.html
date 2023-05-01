@@ -9,19 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>USUARIO - Tables</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/Usuario.css">
+
+
 
 </head>
 
@@ -31,14 +33,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion id">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div>
+                    <i class="fa-solid fa-heart"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">USUARIO</div>
             </a>
 
             <!-- Divider -->
@@ -99,15 +101,15 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <i class="fa-solid fa-kit-medical"></i>
+                    <span>INVENTARIO</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -126,15 +128,15 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>PACIENTES</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="usuarios.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="#">
+                    <i class="fa-solid fa-users"></i>
+                    <span>USUARIOS</span></a>
             </li>
 
             <!-- Divider -->
@@ -155,7 +157,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav id="txttop" class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <form class="form-inline">
@@ -178,7 +180,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-white small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -214,14 +216,89 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Gestion de usuarios</h1>
-                    <p class="mb-4">Este modulo permite editar / eliminar / buscar usuarios <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-white">Gestion de usuarios</h1>
+                    <p id="textmb4" class="mb-4">Este modulo permite editar / eliminar / buscar usuarios.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de usuarios</h6>
+
+                            <div id="ventanilla" align="right">
+                                <button id="btn-abrir-modal" >Agrendar Hora </button>
+                                <dialog onclick id="modal">
+
+                               <form action="#" class="form" >
+
+                                   <div>
+                                    <h2 id="txtfor">Formulario</h2>
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label >Nombre</label>
+                                        <input type="text" placeholder="Nombre Completo" />
+                                    </div>
+
+                                   <div class="columna-A">
+                                       <div class="body-modal">
+                                           <label>Fecha de nacimiento</label>
+                                           <input type="date" placeholder="" />
+                                       </div>
+
+                                       <div class="body-modal" id="select-box">
+                                           <label>Sexo</label>
+                                           <select>
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">Masculino</option>
+                                                  <option value="2">Femenino</option>
+                                           </select>
+
+                                       </div>
+                                   </div>
+
+                                   <div class="columna-A">
+                                       <div class="body-modal">
+                                           <label> RUT </label>
+                                           <input type="text" placeholder="" />
+                                       </div>
+                                       <div class="body-modal">
+                                           <label>Telefono</label>
+                                           <input type="text" placeholder="" />
+                                       </div>
+
+                                   </div>
+
+
+                                    <div class="body-modal">
+                                        <label>Hora Paciente</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                   <div class="body-modal">
+                                       <label>Pasaporte</label>
+                                       <input type="text" placeholder="" />
+                                   </div>
+                                    <div class="body-modal">
+                                        <label>Partnacimiento</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Direccion</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Email</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                               </form>
+                                    <div>
+                                    <button id="btn-cerrar-modal">Cancelar</button>
+                                        <button id="btn-enviar-modal">Agregar</button>
+                                    </div>
+                                </dialog>
+
+                            </div>
+                            <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de usuarios</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -252,10 +329,10 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+            <footer  id="footer" class="sticky-footer ">
+                <div  class="container my-auto">
+                    <div class="copyright text-center my-auto text-white">
+                        <span> Tupediatradecorazon@gmail.com</span>
                     </div>
                 </div>
             </footer>
@@ -308,6 +385,8 @@
 
     <!-- Page level custom scripts -->
     <script src="js/tablaUsuarios.js"></script>
+    /*JS MODAL*/
+    <script src="js/Rpacientes.js"></script>
 
 </body>
 
