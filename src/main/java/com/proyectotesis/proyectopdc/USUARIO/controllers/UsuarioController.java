@@ -1,7 +1,7 @@
-package com.proyectotesis.proyectopdc.controllers;
+package com.proyectotesis.proyectopdc.USUARIO.controllers;
 
-import com.proyectotesis.proyectopdc.dao.UsuarioDao;
-import com.proyectotesis.proyectopdc.models.Usuario;
+import com.proyectotesis.proyectopdc.USUARIO.models.Usuario;
+import com.proyectotesis.proyectopdc.USUARIO.dao.UsuarioDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,17 +13,6 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioDao usuarioDao;
-
-    @RequestMapping("api/usuarios/{id}")
-    public Usuario getUser(@PathVariable int id){
-
-        Usuario usuario = new Usuario();
-        usuario.setId(id);
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        return usuario;
-    }
 
     @RequestMapping("api/usuarios")
     public List<Usuario> getUsuarios(){
@@ -47,11 +36,7 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "api/usuarios/{id}",method = RequestMethod.DELETE)
-    public void eliminarUsuario(@PathVariable int id){
-
-        usuarioDao.eliminar(id);
-
-    }
+    public void eliminarUsuario(@PathVariable int id){usuarioDao.eliminar(id);}
 
     @RequestMapping("api/prueba3")
     public Usuario buscarUsuario(){

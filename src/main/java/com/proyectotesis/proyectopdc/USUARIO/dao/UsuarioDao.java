@@ -1,6 +1,6 @@
-package com.proyectotesis.proyectopdc.dao;
+package com.proyectotesis.proyectopdc.USUARIO.dao;
 
-import com.proyectotesis.proyectopdc.models.Usuario;
+import com.proyectotesis.proyectopdc.USUARIO.models.Usuario;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.proyectotesis.proyectopdc.models;
+package com.proyectotesis.proyectopdc.USUARIO.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
