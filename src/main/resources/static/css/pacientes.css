@@ -1,0 +1,123 @@
+#content{
+    background-color: #2a96a5;
+}
+
+
+.bg-gradient-primary {
+
+    background-image: linear-gradient(180deg, #742484 10%, #742484  100%);
+    background-size: cover;
+}
+
+#footer-box{
+    background-color: #742484;
+}
+
+#txtfooter{
+    color: #ffffff;
+}
+
+#box-top{
+    background-color: #742484;
+}
+#box-lup{
+    background-color: #2a96a5;
+}
+
+#textmb4{
+    color: #ffffff;
+}
+
+/*MODAL Y FORMULARIO*/
+
+/*MODAL*/
+#modal::backdrop{
+    background-color:rgba(0,0,0,.55);
+
+
+}
+
+#modal{
+    max-width:50ch;
+
+}
+#modal{
+    top:1%;
+    width: 75%;
+    margin : 0 auto;
+    text-align: left;
+    border-radius: 10px;
+
+
+}
+#btn-abrir-modal{
+
+    background-color: #742484;
+    padding:5px 15px;
+    border-radius: 5px;
+    color:  white;
+}
+
+#btn-abrir-modal:hover{
+    background-color: #742484;
+    color: white;
+}
+
+#btn-cerrar-modal{
+
+    background-color: #742484;
+    padding:5px 15px;
+    border-radius: 5px;
+    color:  white;
+    margin-top: 10px;
+
+
+}
+#btn-enviar-modal{
+    background-color: #742484;
+    padding:5px 15px;
+    border-radius: 5px;
+    color:  white;
+
+}
+/*formulario*/
+
+
+#txtfor{
+    text-align: center;
+}
+
+.form{
+    margin-top: 5px;
+}
+.form .body-modal{
+    width:100%;
+    margin-top:15px;
+    flex-wrap: wrap;
+}
+
+.body-modal label{
+    color:#333;
+
+}
+.form :where(.body-modal input, #select-box select) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #dddd;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+.form .columna-A{
+    display: flex;
+    column-gap: 15px;
+
+
+}
+
