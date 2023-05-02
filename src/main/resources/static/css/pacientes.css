@@ -2,27 +2,33 @@
     background-color: #2a96a5;
 }
 
-#txttop{
+
+.bg-gradient-primary {
+
+    background-image: linear-gradient(180deg, #742484 10%, #742484  100%);
+    background-size: cover;
+}
+
+#footer-box{
     background-color: #742484;
+}
+
+#txtfooter{
+    color: #ffffff;
+}
+
+#box-top{
+    background-color: #742484;
+}
+#box-lup{
+    background-color: #2a96a5;
 }
 
 #textmb4{
     color: #ffffff;
 }
 
-#footer{
-    background-color: #742484;
-}
-
-.bg-gradient-primary {
-    background-color: #2a96a5;
-    background-image: linear-gradient(180deg, #742484 10%, #742484  100%);
-    background-size: cover;
-}
-
-#sidebarToggleTop{
-  color : #ffffff;
-}
+/*MODAL Y FORMULARIO*/
 
 /*MODAL*/
 #modal::backdrop{
@@ -114,6 +120,4 @@
 
 
 }
-
-
 
