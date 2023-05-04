@@ -16,7 +16,7 @@ public class PacienteController {
     @Autowired
     private PacienteDao pacienteDao;
 
-    @RequestMapping("api/getPacientes")
+    @RequestMapping(value = "api/getPacientes", method = RequestMethod.GET)
     public List<Paciente> getPacientes(){return pacienteDao.getPacientes();}
     @RequestMapping(value = "api/registrarPaciente", method = RequestMethod.POST)
     public void registrarPaciente(@RequestBody Paciente paciente){pacienteDao.registrarPacientes(paciente);}

@@ -13,7 +13,7 @@ public class CitaController {
 
     @Autowired
     private CitaDao citaDao;
-    @RequestMapping("api/getCitas")
+    @RequestMapping(value ="api/getCitas",method = RequestMethod.GET)
     public List<Cita> getCita(){return citaDao.getCitas();}
     @RequestMapping(value = "api/registrarCita", method = RequestMethod.POST)
     public void registrarCita(@RequestBody Cita cita){

@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioDao usuarioDao;
 
-    @RequestMapping("api/usuarios")
+    @RequestMapping(value ="api/usuarios" ,method = RequestMethod.GET)
     public List<Usuario> getUsuarios(){
     return usuarioDao.getUsuarios();
     }
@@ -24,7 +24,7 @@ public class UsuarioController {
         usuarioDao.registrarUsuarios(usuario);
     }
 
-    @RequestMapping("api/prueba1")
+    @RequestMapping(value ="api/editarUsuario" ,method = RequestMethod.GET)
     public Usuario editarUsuario(){
 
         Usuario usuario = new Usuario();
