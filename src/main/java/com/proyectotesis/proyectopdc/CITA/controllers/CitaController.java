@@ -23,7 +23,6 @@ public class CitaController {
     public void eliminarCita(@PathVariable int id){citaDao.eliminarCita(id);}
     @RequestMapping(value ="api/editarCita/{id}",method = RequestMethod.PUT)
     public void editarCita(@PathVariable int id, @RequestBody Cita cita){
-        cita.setIdPaciente(id);
         citaDao.editarCita(id, cita);}
     @RequestMapping(value = "api/buscarCita/{id}",method = RequestMethod.GET)
     public Cita buscarCita(@PathVariable int id){return citaDao.buscarCita(id);}

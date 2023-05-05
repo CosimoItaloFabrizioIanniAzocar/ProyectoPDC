@@ -27,7 +27,7 @@ public class PacienteDaoimp implements PacienteDao{
         entityManager.remove(paciente);
     }
     @Override
-    public void registrarPacientes(Paciente paciente){entityManager.merge(paciente);}
+    public void registrarPacientes(Paciente paciente){entityManager.persist(paciente);}
 
     public  Paciente buscarPaciente(int id){return entityManager.find(Paciente.class,id);}
     @Override

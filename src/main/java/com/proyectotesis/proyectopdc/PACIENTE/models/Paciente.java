@@ -4,6 +4,9 @@ package com.proyectotesis.proyectopdc.PACIENTE.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Table(name = "paciente")
 @Entity
@@ -12,14 +15,16 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter@Setter @Column(name = "IDpaciente")
+    @Getter@Setter @Column(name = "id_paciente")
     private int idPaciente;
 
     @Getter@Setter @Column(name = "nombre")
     private String nombrePaciente;
 
-    @Getter@Setter @Column(name = "edad")
-    private int edadPaciente;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Getter@Setter @Column(name = "fecha_nacimiento")
+    private Date fechaNacimiento;
 
     @Getter@Setter @Column(name = "rut")
     private String rutPaciente;

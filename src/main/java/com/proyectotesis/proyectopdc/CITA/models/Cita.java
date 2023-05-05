@@ -14,7 +14,7 @@ public class Cita {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter@Setter @Column(name = "IDcita")
+    @Getter@Setter @Column(name = "id_cita")
     private int idCita;
 
     @Getter@Setter @Column(name = "id_paciente")

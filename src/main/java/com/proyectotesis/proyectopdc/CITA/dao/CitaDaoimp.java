@@ -22,12 +22,15 @@ public class CitaDaoimp implements CitaDao{
         entityManager.remove(cita);
     }
     @Override
-    public void registrarCita(Cita cita) {entityManager.merge(cita);}
+    public void registrarCita(Cita cita) {entityManager.persist(cita);}
     @Override
     public Cita buscarCita(int id) {return entityManager.find(Cita.class,id);}
     @Override
     public void editarCita(@PathVariable int id, Cita cita) {
-        entityManager.find(Cita.class, id);
-        entityManager.merge(cita);
+        Cita citaExistente= entityManager.find(Cita.class, id);
+        if(citaExistente!=null) {
+            cita.setIdCita(id);
+            entityManager.merge(cita);
+        }
     }
 }
