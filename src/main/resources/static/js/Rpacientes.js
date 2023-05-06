@@ -1,21 +1,21 @@
 $(document).ready(function () {
     cargarPacientes();
+
+    const btnAbrirModal =
+        document.querySelector("#btn-abrir-modal");
+    const btnCerrarModal =
+        document.querySelector("#btn-cerrar-modal");
+    const modal =
+        document.querySelector("#modal");
+    btnAbrirModal.addEventListener("click", () => {
+        modal.showModal();
+    });
+        btnCerrarModal.addEventListener("click", () => {
+            modal.close();
+        });
+
 });
 
-const btnAbrirModal=
-    document.querySelector("#btn-abrir-modal");
-const btnCerrarModal=
-    document.querySelector("#btn-cerrar-modal");
-const modal=
-    document.querySelector("#modal");
-
-btnAbrirModal.addEventListener("click",()=>{
-    modal.showModal();
-})
-
-btnCerrarModal.addEventListener("click",()=>{
-    modal.close();
-})
 /* Conexion con Pacientes */
     function cargarPacientes() {
     $.ajax({
@@ -36,7 +36,7 @@ btnCerrarModal.addEventListener("click",()=>{
                         "<td>" + item.direccionPaciente + "</td>" +
                         "<td>" + item.telefonoPaciente + "</td>" +
                         "<td>" + item.emailPaciente + "</td>" +
-                        "<td>" + botonEliminar+ + "</td>" +
+                        "<td>" + botonEliminar+ + botonAgregar +"</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -44,28 +44,26 @@ btnCerrarModal.addEventListener("click",()=>{
             }
         }
     )
-
 }
 
-function eliminarPaciente(id) {
-        if(!confirm("¿Está seguro que desea eliminar el paciente?")){
+    function eliminarPaciente(id) {
+        if (!confirm("¿Está seguro que desea eliminar el paciente?")) {
             return;
         }
-    $.ajax({
-        type: "DELETE",
-        url: "http://localhost:8080/api/pacientes/" + id,
-        success: function (response) {
-            window.location.reload();
-        }
-    });
-}
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:8080/api/pacientes/" + id,
+            success: function (response) {
+                window.location.reload();
+            }
+        });
+    }
 
 
 //*agregar paciente*//
 
  function agregarPaciente(){
      let datos = {};
-     let botonAgregar  = "<button id=\"btn-enviar-modal\" onclick='agregarPaciente(" + item.id_paciente + ")'>Agregar</button>";
 
       datos.nombre = document.getElementById('nombrePaciente').value;
       datos.fecha_nacimiento = document.getElementById('edadPaciente').value;
@@ -75,7 +73,6 @@ function eliminarPaciente(id) {
       datos.pasaporte = document.getElementById('pasaportePaciente').value;
       datos.direccion = document.getElementById('direccionPaciente').value;
       datos.Email = document.getElementById('emailPaciente').value;
-
 
      $.ajax({
             type: "POST",
@@ -94,3 +91,46 @@ function eliminarPaciente(id) {
         window.location.reload();
  }
 
+        /* Conexion con Citas */
+function cargarCitas() {
+    $.ajax({
+            type: "GET",
+            url:"http://localhost:8080/api/getCitas",
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idCita + ")'>Eliminar</button>";
+                    var row = "<tr>" +
+                        "<td>" + item.idCita + "</td>" +
+                        "<td>" + item.idPaciente + "</td>" +
+                        "<td>" + item.fecha + "</td>" +
+                        "<td>" + item.hora + "</td>" +
+                        "<td>" + item.tipo + "</td>" +
+                        "<td>" + item.estado + "</td>" +
+                        "<td>" + botonEliminar+ + botonAgregar +"</td>" +
+
+                        "</tr>";
+
+
+
+                    $(row).appendTo("#tablaPacientes tbody");
+                });
+
+            }
+        }
+    )
+
+}
+
+function eliminarPaciente(id) {
+    if (!confirm("¿Está seguro que desea eliminar la cita?")) {
+        return;
+    }
+    $.ajax({
+        type: "DELETE",
+        url: "http://localhost:8080/api/getCitas" + id,
+        success: function (response) {
+            window.location.reload();
+        }
+    });
+}

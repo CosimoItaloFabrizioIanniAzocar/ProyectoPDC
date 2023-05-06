@@ -1,0 +1,54 @@
+.contenedorCalendario{
+    display: flex;
+    justify-content: center;
+}
+#mes{
+    margin-top:20px;
+    font-size: 32px;
+    text-transform: uppercase;
+
+}
+.calen{
+   text-align: center;
+}
+
+.contenedorCalendario .calen header{
+    position: relative;
+}
+.boton-iz, .boton-de{
+    position: absolute;
+    top: 50%;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-top: -16px;
+    border: 2px solid #cbd1d2;
+    border-radius: 50%;
+    color: #cbd1d2;
+    font-size: 16px;
+    font-width: bold;
+}
+#boton-ant{
+    left: 35%;
+}
+#boton-des{
+    right: 35%;
+}
+#boton-ant:hover, #boton-des:hover{
+    background-color: #cbd1d2;
+    color: #fff;
+}
+.contenedorCalendario table{
+    margin-top: 100px;
+    border-collapse: collapse;
+}
+.contenedorCalendario thead{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.contenedorCalendario td{
+    border:1px solid #cbd1d2;
+    height: 71.4px;
+    text-align: center;
+    width: 71.4px;
+}

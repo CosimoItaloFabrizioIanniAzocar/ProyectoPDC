@@ -124,6 +124,18 @@
                 </div>
             </div>
         </li>
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="citas.html">
+                <i class="fa-solid fa-file-invoice"></i>
+                <span>CITAS</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="calendario.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>CALENDARIO</span></a>
+        </li>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item active">
@@ -138,6 +150,7 @@
                 <i class="fa-solid fa-users"></i>
                 <span>USUARIOS</span></a>
         </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -351,83 +364,17 @@
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-white">Gestion de Pacientes</h1>
-                <p id="textmb4" class="mb-4">Este modulo permite editar / eliminar / buscar usuarios.</p>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
 
                         <div id="ventanilla" align="right">
-                            <button id="btn-abrir-modal" >Agregar Paciente </button>
-                            <dialog onclick id="modal">
 
-                                <form action="#" class="form" >
-
-                                    <div>
-                                        <h2 id="txtfor">Formulario</h2>
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label >Nombre</label>
-                                        <input type="text" placeholder="Nombre Completo" />
-                                    </div>
-
-                                    <div class="columna-A">
-                                        <div class="body-modal">
-                                            <label>Fecha de nacimiento</label>
-                                            <input type="date" placeholder="" />
-                                        </div>
-
-                                        <div class="body-modal" id="select-box">
-                                            <label>Sexo</label>
-                                            <select>
-                                                <option value="0">Seleccione</option>
-                                                <option value="1">Masculino</option>
-                                                <option value="2">Femenino</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="columna-A">
-                                        <div class="body-modal">
-                                            <label> RUT </label>
-                                            <input type="text" placeholder="" />
-                                        </div>
-                                        <div class="body-modal">
-                                            <label>Telefono</label>
-                                            <input type="text" placeholder="" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label>Pasaporte</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-                                    <div class="body-modal">
-                                        <label>Partnacimiento</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label>Direccion</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label>Email</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-                                </form>
-                                <div>
-                                    <button id="btn-cerrar-modal">Cancelar</button>
-                                    <button id="btn-enviar-modal">Agregar</button>
-                                </div>
                             </dialog>
 
                         </div>
-                        <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de usuarios</h6>
+                        <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Pacientes</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -436,7 +383,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>
-                                    <th>Edad Paciente</th>
+                                    <th>Fecha de Nacimiento</th>
                                     <th>Rut</th>
                                     <th>Pasaporte</th>
                                     <th>Partida Nacimiento</th>
