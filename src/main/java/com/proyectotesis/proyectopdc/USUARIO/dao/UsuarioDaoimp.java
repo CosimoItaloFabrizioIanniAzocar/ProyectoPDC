@@ -1,6 +1,8 @@
 package com.proyectotesis.proyectopdc.USUARIO.dao;
 
 import com.proyectotesis.proyectopdc.USUARIO.models.Usuario;
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -35,15 +37,19 @@ public class UsuarioDaoimp implements UsuarioDao{
 
     @Override
     public boolean verificaCredenciales(Usuario usuario) {
-        String query = "FROM Usuario WHERE nombre = :nombre AND password = :password";
+        String query = "FROM Usuario WHERE nombre = :nombre";
 
         List<Usuario> lista = entityManager.createQuery(query)
-                .setParameter("nombre",usuario.getNombre()
-                )
-                .setParameter("password",usuario.getPassword())
+                .setParameter("nombre",usuario.getNombre())
                 .getResultList();
+        if (lista.isEmpty()){
+            return false;
+        }
 
-        return !lista.isEmpty();
+        Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+        String contrasenaHasheada = lista.get(0).getPassword();
+
+        return argon2.verify(contrasenaHasheada,usuario.getPassword());
 
     }
 }
