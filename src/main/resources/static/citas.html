@@ -125,20 +125,20 @@
             </div>
         </li>
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="citas.html">
                 <i class="fa-solid fa-file-invoice"></i>
                 <span>CITAS</span></a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item ">
             <a class="nav-link" href="calendario.html">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span>CALENDARIO</span></a>
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item active">
+        <li class="nav-item ">
             <a class="nav-link" href="pacientes.html">
                 <i class="fa-solid fa-clipboard-user"></i>
                 <span>PACIENTES</span></a>
@@ -370,7 +370,48 @@
                     <div class="card-header py-3">
 
                         <div id="ventanilla" align="right">
+                            <button id="btn-abrir-modal" >Agrendar Cita </button>
+                            <dialog onclick id="modal">
 
+                                <form action="#" class="form" >
+
+                                    <div>
+                                        <h2 id="txtfor">Formulario</h2>
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label >Nombre</label>
+                                        <input type="text" placeholder="Nombre Completo" />
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label>Fecha de nacimiento</label>
+                                            <input type="date" placeholder="" />
+                                        </div>
+
+                                        <div class="body-modal" id="select-box">
+                                            <label>Hora</label>
+                                            <input type="time" placeholder="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label> Tipo </label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Estado</label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+
+                                    </div>
+                                </form>
+                                <div>
+                                    <button id="btn-cerrar-modal">Cancelar</button>
+                                    <button id="btn-enviar-modal">Agregar</button>
+                                </div>
                             </dialog>
 
                         </div>
@@ -378,7 +419,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="tablaPacientes" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="tablaCitas" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -456,7 +497,7 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!--JS MODAL -->
-<script src="js/Rpacientes.js"></script>
+<script src="js/Rcitas.js"></script>
 
 </body>
 

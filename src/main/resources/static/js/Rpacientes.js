@@ -1,20 +1,24 @@
+
+
 $(document).ready(function () {
     cargarPacientes();
 
-    const btnAbrirModal =
-        document.querySelector("#btn-abrir-modal");
-    const btnCerrarModal =
-        document.querySelector("#btn-cerrar-modal");
-    const modal =
-        document.querySelector("#modal");
-    btnAbrirModal.addEventListener("click", () => {
-        modal.showModal();
-    });
-        btnCerrarModal.addEventListener("click", () => {
-            modal.close();
-        });
-
 });
+const btnAbrirModal=
+    document.querySelector("#btn-abrir-modal");
+const btnCerrarModal=
+    document.querySelector("#btn-cerrar-modal");
+const modal=
+    document.querySelector("#modal");
+
+btnAbrirModal.addEventListener("click",()=>{
+    modal.showModal(false);
+})
+
+btnCerrarModal.addEventListener("click",()=>{
+    modal.close();
+})
+
 
 /* Conexion con Pacientes */
     function cargarPacientes() {
@@ -24,11 +28,11 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 $.each(data, function (i, item) {
-                    let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.id_paciente + ")'>Eliminar</button>";
+                    let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
                     var row = "<tr>" +
-                        "<td>" + item.id_paciente + "</td>" +
+                        "<td>" + item.idPaciente + "</td>" +
                         "<td>" + item.nombrePaciente + "</td>" +
-                        "<td>" + item.fecha_nacimiento + "</td>" +
+                        "<td>" + item.fechaNacimiento + "</td>" +
                         "<td>" + item.rutPaciente + "</td>" +
                         "<td>" + item.pasaportePaciente + "</td>" +
                         "<td>" + item.partidaNacimientoPaciente + "</td>" +
@@ -36,7 +40,7 @@ $(document).ready(function () {
                         "<td>" + item.direccionPaciente + "</td>" +
                         "<td>" + item.telefonoPaciente + "</td>" +
                         "<td>" + item.emailPaciente + "</td>" +
-                        "<td>" + botonEliminar+ + botonAgregar +"</td>" +
+                        "<td>" + botonEliminar+"</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -60,77 +64,34 @@ $(document).ready(function () {
     }
 
 
+
 //*agregar paciente*//
 
  function agregarPaciente(){
      let datos = {};
 
-      datos.nombre = document.getElementById('nombrePaciente').value;
-      datos.fecha_nacimiento = document.getElementById('edadPaciente').value;
-      datos.sexo = document.getElementById('sexoPaciente').value;
-      datos.rut = document.getElementById('rutPaciente').value;
-      datos.telefono = document.getElementById('telefonoPaciente').value;
-      datos.pasaporte = document.getElementById('pasaportePaciente').value;
-      datos.direccion = document.getElementById('direccionPaciente').value;
-      datos.Email = document.getElementById('emailPaciente').value;
+      datos.nombrePaciente = document.getElementById('nombrePaciente').value;
+      datos.fechaNacimiento = document.getElementById('edadPaciente').value;
+      datos.rutPaciente = document.getElementById('rutPaciente').value;
+      datos.pasaportePaciente = document.getElementById('pasaportePaciente').value;
+      datos.partidaNacimientoPaciente = document.getElementById('partNacimiento').value;
+      datos.sexoPaciente = document.getElementById('sexoPaciente').value;
+      datos.direccionPaciente = document.getElementById('direccionPaciente').value;
+      datos.telefonoPaciente = document.getElementById('telefonoPaciente').value;
+      datos.emailPaciente = document.getElementById('emailPaciente').value;
 
      $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/pacientes",
-            dataType: "json",
+            url: "http://localhost:8080/api/registrarPaciente",
+            data: JSON.stringify(datos),
+            contentType: "application/json",
             success: function (datos) {
                 if(datos=="success") {
                     alert("Paciente resgistrado correctamente");
                 }
-                else {
-                    alert("Error al registrar paciente");
-                }
+                window.location.reload();
             }
 
         })
-        window.location.reload();
  }
 
-        /* Conexion con Citas */
-function cargarCitas() {
-    $.ajax({
-            type: "GET",
-            url:"http://localhost:8080/api/getCitas",
-            dataType: "json",
-            success: function (data) {
-                $.each(data, function (i, item) {
-                    let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idCita + ")'>Eliminar</button>";
-                    var row = "<tr>" +
-                        "<td>" + item.idCita + "</td>" +
-                        "<td>" + item.idPaciente + "</td>" +
-                        "<td>" + item.fecha + "</td>" +
-                        "<td>" + item.hora + "</td>" +
-                        "<td>" + item.tipo + "</td>" +
-                        "<td>" + item.estado + "</td>" +
-                        "<td>" + botonEliminar+ + botonAgregar +"</td>" +
-
-                        "</tr>";
-
-
-
-                    $(row).appendTo("#tablaPacientes tbody");
-                });
-
-            }
-        }
-    )
-
-}
-
-function eliminarPaciente(id) {
-    if (!confirm("¿Está seguro que desea eliminar la cita?")) {
-        return;
-    }
-    $.ajax({
-        type: "DELETE",
-        url: "http://localhost:8080/api/getCitas" + id,
-        success: function (response) {
-            window.location.reload();
-        }
-    });
-}

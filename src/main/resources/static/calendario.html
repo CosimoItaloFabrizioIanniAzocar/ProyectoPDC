@@ -3,26 +3,28 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
 
-  <title>CALENDARIO</title>
+        <title>CALENDARIO</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/pacientes.css">
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/pacientes.css">
+        <link rel="stylesheet" href="css/calendario.css">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link href="https://code.jquery.com/jquery-3.6.4.min.js">
+        <link href="https://code.jquery.com/jquery-3.6.4.min.js">
+        <link rel="stylesheet" href="css/calendario.css">
 
 
 </head>
@@ -30,71 +32,71 @@
 <body id="page-top">
 
 <!-- Page Wrapper -->
-<div id="wrapper">
+      <div id="wrapper">
 
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-      <div>
-        <i class="fa-solid fa-heart"></i>
-      </div>
-      <div class="sidebar-brand-text mx-3">CALENDARIO</div>
-    </a>
+          <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+              <div>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="sidebar-brand-text mx-3">CALENDARIO</div>
+            </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-    </li>
+          <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Dashboard</span></a>
+            </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+          <!-- Divider -->
+          <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Interface
-    </div>
+          <!-- Heading -->
+          <div class="sidebar-heading">
+            Interface
+          </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Components</span>
-      </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Components:</h6>
-          <a class="collapse-item" href="buttons.html">Buttons</a>
-          <a class="collapse-item" href="cards.html">Cards</a>
-        </div>
-      </div>
-    </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Custom Components:</h6>
+              <a class="collapse-item" href="buttons.html">Buttons</a>
+              <a class="collapse-item" href="cards.html">Cards</a>
+            </div>
+          </div>
+        </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
-        <span>Utilities</span>
-      </a>
-      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-           data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Utilities:</h6>
-          <a class="collapse-item" href="utilities-color.html">Colors</a>
-          <a class="collapse-item" href="utilities-border.html">Borders</a>
-          <a class="collapse-item" href="utilities-animation.html">Animations</a>
-          <a class="collapse-item" href="utilities-other.html">Other</a>
-        </div>
-      </div>
-    </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+             aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Utilities</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+               data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Custom Utilities:</h6>
+                  <a class="collapse-item" href="utilities-color.html">Colors</a>
+                  <a class="collapse-item" href="utilities-border.html">Borders</a>
+                  <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                  <a class="collapse-item" href="utilities-other.html">Other</a>
+              </div>
+          </div>
+        </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -131,14 +133,14 @@
         <i class="fa-solid fa-file-invoice"></i>
         <span>CITAS</span></a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="calendario.html">
         <i class="fa-solid fa-calendar-days"></i>
         <span>CALENDARIO</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item active">
+    <li class="nav-item ">
       <a class="nav-link" href="pacientes.html">
         <i class="fa-solid fa-clipboard-user"></i>
         <span>PACIENTES</span></a>
@@ -365,54 +367,88 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-white">Calendario</h1>
 
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-
-            <div id="ventanilla" align="right">
-
-              </dialog>
-
+        <!-- Calendario Maldito de hombre -->
+          <div class="container">
+            <div class="left">
+              <div class="calendar">
+                <div class="month">
+                  <i class="fas fa-angle-left prev"></i>
+                  <div class="date">december 2015</div>
+                  <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                  <div>Domingo</div>
+                  <div>Lunes</div>
+                  <div>Martes</div>
+                  <div>Miercoles</div>
+                  <div>Jueves</div>
+                  <div>Viernes</div>
+                  <div>Sabado</div>
+                </div>
+                <div class="days"></div>
+                <div class="goto-today">
+                  <div class="goto">
+                    <input type="text" placeholder="mm/yyyy" class="date-input" />
+                    <button class="goto-btn">Go</button>
+                  </div>
+                  <button class="today-btn">Today</button>
+                </div>
+              </div>
             </div>
-            <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Citas</h6>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="tablaPacientes" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Paciente</th>
-                  <th>Fecha</th>
-                  <th>Hora</th>
-                  <th>Tipo</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
+            <div class="right">
+              <div class="today-date">
+                <div class="event-day">wed</div>
+                <div class="event-date">12th december 2022</div>
+              </div>
+              <div class="events"></div>
+              <div class="add-event-wrapper">
+                <div class="add-event-header">
+                  <div class="title">Add Event</div>
+                  <i class="fas fa-times close"></i>
+                </div>
+                <div class="add-event-body">
+                  <div class="add-event-input">
+                    <input type="text" placeholder="Event Name" class="event-name" />
+                  </div>
+                  <div class="add-event-input">
+                    <input
+                            type="text"
+                            placeholder="Event Time From"
+                            class="event-time-from"
+                    />
+                  </div>
+                  <div class="add-event-input">
+                    <input
+                            type="text"
+                            placeholder="Event Time To"
+                            class="event-time-to"
+                    />
+                  </div>
 
-                </tr>
-                </thead>
-
-                <tbody>
-
-
-                </tbody>
-              </table>
+                </div>
+                <div class="add-event-footer">
+                  <button class="add-event-btn">Add Event</button>
+                </div>
+              </div>
             </div>
+            <button class="add-event">
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
-        </div>
 
-      </div>
-    </div>
 
-    <!-- Footer -->
-    <footer id="footer-box" class="sticky-footer">
-      <div class="container my-auto">
-        <div id="txtfooter" class="copyright text-center my-auto ">
-          <span>Tupediatradecorazon@gmail.com</span>
+
+
+
+
+
+
+
         </div>
       </div>
-    </footer>
-    <!-- End of Footer -->
+      </div>
+
+
 
   </div>
   <!-- End of Content Wrapper -->
@@ -456,7 +492,8 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!--JS MODAL -->
-<script src="js/Rpacientes.js"></script>
+
+<script src="js/calendario.js"></script>
 
 </body>
 
