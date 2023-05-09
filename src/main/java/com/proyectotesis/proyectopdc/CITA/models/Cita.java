@@ -11,6 +11,18 @@ import java.util.Date;
 @Table(name = "cita")
 @Entity
 public class Cita {
+    public Cita() {
+
+    }
+
+    public Cita(int idCita, int idPaciente, Date fecha, String hora, String tipo, Boolean estado) {
+        this.idCita = idCita;
+        this.idPaciente = idPaciente;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.tipo = tipo;
+        this.estado = estado;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,5 +47,6 @@ public class Cita {
 
     @Getter@Setter @Column(name = "estado")
     private Boolean estado;
+
 
 }
