@@ -62,7 +62,7 @@ function eliminarCitas(id) {
     }
     $.ajax({
         type: "DELETE",
-        url: "http://localhost:8080/api/getCitas" + id,
+        url: "http://localhost:8080/api/citas/" + id,
         success: function (response) {
             window.location.reload();
         }

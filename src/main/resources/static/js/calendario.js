@@ -12,9 +12,13 @@ const calendar = document.querySelector(".calendar"),
     addEventBtn = document.querySelector(".add-event"),
     addEventWrapper = document.querySelector(".add-event-wrapper "),
     addEventCloseBtn = document.querySelector(".close "),
+
     addEventTitle = document.querySelector(".event-name "),
+    addEventTitle2 = document.querySelector(".event-name2 "),
+
     addEventFrom = document.querySelector(".event-time-from "),
     addEventTo = document.querySelector(".event-time-to "),
+
     addEventSubmit = document.querySelector(".add-event-btn ");
 
 let today = new Date();
@@ -239,6 +243,7 @@ function getActiveDay(date) {
 }
 
 //function update events when a day is active
+
 function updateEvents(date) {
     let events = "";
     eventsArr.forEach((event) => {
@@ -252,6 +257,11 @@ function updateEvents(date) {
             <div class="title">
               <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
+        
+            </div>
+            <div class="title2">
+             
+              <h3 class="event-title2">${event.title2}</h3>
             </div>
             <div class="event-time">
               <span class="event-time">${event.time}</span>
@@ -287,6 +297,9 @@ document.addEventListener("click", (e) => {
 //allow 50 chars in eventtitle
 addEventTitle.addEventListener("input", (e) => {
     addEventTitle.value = addEventTitle.value.slice(0, 60);
+});
+addEventTitle2.addEventListener("input", (e) => {
+    addEventTitle2.value = addEventTitle2.value.slice(0, 60);
 });
 
 function defineProperty() {
@@ -333,9 +346,11 @@ addEventTo.addEventListener("input", (e) => {
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
     const eventTitle = addEventTitle.value;
+    const eventTitle2 = addEventTitle2.value;
     const eventTimeFrom = addEventFrom.value;
     const eventTimeTo = addEventTo.value;
-    if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
+
+    if (eventTitle === ""|| eventTitle2 === ""|| eventTimeFrom === "" || eventTimeTo === "") {
         alert("Please fill all the fields");
         return;
     }
@@ -370,6 +385,9 @@ addEventSubmit.addEventListener("click", () => {
                 if (event.title === eventTitle) {
                     eventExist = true;
                 }
+                if (event.title2 === eventTitle2) {
+                    eventExist = true;
+                }
             });
         }
     });
@@ -379,6 +397,7 @@ addEventSubmit.addEventListener("click", () => {
     }
     const newEvent = {
         title: eventTitle,
+        title2:eventTitle2,
         time: timeFrom + " - " + timeTo,
     };
     console.log(newEvent);
@@ -409,6 +428,7 @@ addEventSubmit.addEventListener("click", () => {
     console.log(eventsArr);
     addEventWrapper.classList.remove("active");
     addEventTitle.value = "";
+    addEventTitle2.value = "";
     addEventFrom.value = "";
     addEventTo.value = "";
     updateEvents(activeDay);
