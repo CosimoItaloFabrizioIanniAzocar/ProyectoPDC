@@ -26,5 +26,6 @@ public class InsumoController {
     @RequestMapping(value = "api/actualizarCantidad/{id}",method = RequestMethod.PUT)
     public void actualizarCantidad(@PathVariable int id, @RequestBody Insumo insumo) { insumoDao.actualizarCantidad(id,insumo);}
 
-
+    @RequestMapping(value = "api/getEstado/{id}",method = RequestMethod.PUT)
+    public void estadoStock(@PathVariable int id) {insumoDao.estadoStock(id);}
 }

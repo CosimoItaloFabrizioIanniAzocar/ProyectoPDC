@@ -41,4 +41,20 @@ public class InsumoDaoimp implements InsumoDao{
             entityManager.merge(insumo);
         }
     }
+
+    @Override
+    public void estadoStock (@PathVariable int id) {
+        Insumo insumo = entityManager.find(Insumo.class,id);
+        insumo.setIdInsumo(id);
+        insumo.setNombre(insumo.getNombre());
+        insumo.setCantidad(insumo.getCantidad());
+        if (insumo.getCantidad()<=0){
+            insumo.setEstado("Agotado");
+        }else if(insumo.getCantidad()<=50){
+            insumo.setEstado("Poco Stock");
+        }else{
+            insumo.setEstado("Suficiente");
+        }
+        entityManager.merge(insumo);
+    }
 }

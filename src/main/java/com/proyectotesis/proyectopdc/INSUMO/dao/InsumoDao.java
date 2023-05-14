@@ -13,4 +13,6 @@ public interface InsumoDao {
 
     void actualizarCantidad(int id, Insumo insumo);
 
+    void estadoStock(int id);
+
 }
