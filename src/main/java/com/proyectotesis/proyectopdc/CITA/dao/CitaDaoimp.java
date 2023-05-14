@@ -12,6 +12,8 @@ import java.util.List;
 public class CitaDaoimp implements CitaDao{
     @PersistenceContext
     private EntityManager entityManager;
+
+    @SuppressWarnings("unchecked")
     @Override
     public List<Cita> getCitas() {
         String query = "FROM Cita";

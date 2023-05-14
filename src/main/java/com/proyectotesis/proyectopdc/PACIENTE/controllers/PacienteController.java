@@ -1,7 +1,6 @@
 package com.proyectotesis.proyectopdc.PACIENTE.controllers;
 
 
-import com.proyectotesis.proyectopdc.CITA.dao.CitaDao;
 import com.proyectotesis.proyectopdc.CITA.models.Cita;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import com.proyectotesis.proyectopdc.PACIENTE.dao.PacienteDao;

@@ -27,10 +27,10 @@ public class CitaController {
     @RequestMapping(value = "api/buscarCita/{id}",method = RequestMethod.GET)
     public Cita buscarCita(@PathVariable int id){return citaDao.buscarCita(id);}
 
-    @RequestMapping(value = "api/citaAtendida",method = RequestMethod.PUT)
-    public void citaAtendida(@RequestBody Cita cita){
+    @RequestMapping(value = "api/citaAtendida/{id}",method = RequestMethod.PUT)
+    public void citaAtendida(@PathVariable int id, @RequestBody Cita cita){
         cita.setEstado(true);
-        citaDao.editarCita(cita.getIdPaciente(), cita);
+        citaDao.editarCita(id, cita);
     }
 
 }

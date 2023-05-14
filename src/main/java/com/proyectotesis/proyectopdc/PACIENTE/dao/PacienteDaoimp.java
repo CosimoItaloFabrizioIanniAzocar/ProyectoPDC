@@ -16,6 +16,8 @@ public class PacienteDaoimp implements PacienteDao{
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @SuppressWarnings("unchecked")
     @Override
     public List<Paciente> getPacientes() {
         String query = "FROM Paciente";
@@ -35,11 +37,12 @@ public class PacienteDaoimp implements PacienteDao{
         entityManager.find(Paciente.class, id);
         entityManager.merge(paciente);
     }
+
+    @SuppressWarnings("unchecked")
     @Override
     public List<Cita> citasPaciente(int id) {
         String query = "FROM Cita WHERE idPaciente = :id";
-        List<Cita> citas = entityManager.createQuery(query).setParameter("id", id).getResultList();
-        return citas;
+        return (List<Cita>) entityManager.createQuery(query).setParameter("id", id).getResultList();
     }
 
 }
