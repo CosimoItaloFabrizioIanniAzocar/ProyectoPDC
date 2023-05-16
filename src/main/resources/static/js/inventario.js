@@ -126,14 +126,22 @@ function editarInsumo(id) {
             contentType: "application/json",
             success: function (data) {
                 $("#editarCantidad").val(data.cantidad);
-                if (datos == "success") {
-                    alert("Insumo editado correctamente");
-                }
-                window.location.reload();
+                $.ajax({
+                    type: "PUT",
+                    url: "http://localhost:8080/api/getEstado/" + Idinsumo,
+                    data: JSON.stringify(datos),
+                    contentType: "application/json",
+                    success: function (data) {
 
+
+
+                    }
+                })
+                window.location.reload();
+                alert("Insumo editado correctamente");
             }
         })
-    }
+}
 
 
 

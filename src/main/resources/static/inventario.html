@@ -305,8 +305,8 @@
 
         <h1 class="h3 mb-2 text-white">Gestion de Inventario</h1>
         <div class="card shadow mb-4">
-          <div class="card-header py-3">
 
+          <div class="card-header py-3">
             <div id="ventanilla" align="right">
               <button id="btn-abrir-modal" >Agregar Insumo </button>
               <dialog onclick id="modal">
@@ -332,10 +332,11 @@
                   <button id="btn-enviar-modal" onclick="agregarInsumo()">Agregar</button>
                 </div>
               </dialog>
-
             </div>
+
             <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Insumos</h6>
           </div>
+
           <div class="card-header py-3">
             <div id="ventanillaEditar" align="right">
 
@@ -355,7 +356,7 @@
                 </form>
                 <div>
                   <button id="btn-cerrar-editar">Cancelar</button>
-                  <button id="btn-enviar-editar" onclick="guardarInsumos()">Agregar</button>
+                  <button id="btn-enviar-editar" onclick="guardarInsumos(),actualizarEstado()">Agregar</button>
                 </div>
               </dialog>
 

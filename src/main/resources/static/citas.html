@@ -30,7 +30,7 @@
 <body id="page-top">
 
 <!-- Page Wrapper -->
-<div id="wrapper">
+    <div id="wrapper">
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -311,9 +311,9 @@
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
 
-                        <div id="ventanilla" align="right">
+                    <div class="card-header py-3">
+                        <div id="ventanillaEd" align="right">
                             <button id="btn-abrir-modal" >Agrendar Cita </button>
                             <dialog onclick id="modal">
 
@@ -358,6 +358,50 @@
                                 </div>
                             </dialog>
 
+                            <!--ACA EMPIEZA ALGO NUEVO -->
+
+                            <div class="card-header py-3">
+                                <div id="ventanilla" align="right">
+                                    <dialog onclick id="modalEd">
+
+                                        <form action="#" class="form" >
+
+                                            <div>
+                                                <h2 id="txtTitulo">Editar Formulario</h2>
+                                            </div>
+
+                                            <div class="body-modal">
+                                                <label >Nombre</label>
+                                                <input id="editarNombre" type="text" placeholder="Nombre Completo" />
+                                            </div>
+
+                                            <div class="columna-A">
+                                                <div class="body-modal">
+                                                    <label>Fecha de nacimiento</label>
+                                                    <input id="editarNacimiento" type="date" placeholder="" />
+                                                </div>
+
+                                                <div class="body-modal" id="select-boxx">
+                                                    <label>Hora</label>
+                                                    <input id="editarHora" type="time" placeholder="" />
+                                                </div>
+                                            </div>
+
+                                            <div class="columna-A">
+                                                <div class="body-modal">
+                                                    <label> Tipo </label>
+                                                    <input id="editarTipo" type="text" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div>
+                                            <button id="btn-cerrar-edModal">Cancelar</button>
+                                            <button id="btn-enviar-edModal"  onclick="guardarCitas()">Agregar</button>
+                                        </div>
+                                    </dialog>
+
+                                    <!--ACA TERMINA ALGO NUEVO -->
+
                         </div>
                         <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Citas</h6>
                     </div>
@@ -397,52 +441,51 @@
                 </div>
             </div>
         </footer>
-        <!-- End of Footer -->
 
-    </div>
-    <!-- End of Content Wrapper -->
 
+        </div>
+        </div>
+        </div>
 </div>
-<!-- End of Page Wrapper -->
 
-<!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
 
-<!--JS MODAL -->
-<script src="js/Rcitas.js"></script>
+            <!--JS MODAL -->
+            <script src="js/Rcitas.js"></script>
 
 </body>
 
 </html>
+
