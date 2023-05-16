@@ -15,20 +15,14 @@ public class InsumoController {
 
     @RequestMapping(value = "api/getInsumos",method = RequestMethod.GET)
     public List<Insumo> getInsumos(){return insumoDao.getInsumos();}
-
-
     @RequestMapping(value = "api/eliminarInsumo/{id}",method = RequestMethod.DELETE)
     public void eliminarInsumo(@PathVariable int id) {insumoDao.eliminarInsumo(id);}
-
     @RequestMapping(value = "api/registrarInsumo",method = RequestMethod.POST)
     public void registrarInsumo(@RequestBody Insumo insumo) { insumoDao.registrarInsumo(insumo);}
-
     @RequestMapping(value = "api/actualizarCantidad/{id}",method = RequestMethod.PUT)
     public void actualizarCantidad(@PathVariable int id, @RequestBody Insumo insumo) { insumoDao.actualizarCantidad(id,insumo);}
-
     @RequestMapping(value = "api/getEstado/{id}",method = RequestMethod.PUT)
     public void estadoStock(@PathVariable int id) {insumoDao.estadoStock(id);}
-
     @RequestMapping(value = "api/buscarInsumo/{id}",method = RequestMethod.GET)
     public Insumo buscarInsumo(@PathVariable int id){return insumoDao.buscarInsumo(id);}
 }
