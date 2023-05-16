@@ -28,4 +28,7 @@ public class InsumoController {
 
     @RequestMapping(value = "api/getEstado/{id}",method = RequestMethod.PUT)
     public void estadoStock(@PathVariable int id) {insumoDao.estadoStock(id);}
+
+    @RequestMapping(value = "api/buscarInsumo/{id}",method = RequestMethod.GET)
+    public Insumo buscarInsumo(@PathVariable int id){return insumoDao.buscarInsumo(id);}
 }

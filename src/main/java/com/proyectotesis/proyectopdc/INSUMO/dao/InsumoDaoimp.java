@@ -1,6 +1,7 @@
 package com.proyectotesis.proyectopdc.INSUMO.dao;
 
 import com.proyectotesis.proyectopdc.INSUMO.models.Insumo;
+import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -57,4 +58,6 @@ public class InsumoDaoimp implements InsumoDao{
         }
         entityManager.merge(insumo);
     }
+
+    public Insumo buscarInsumo(int id){return entityManager.find(Insumo.class,id);}
 }

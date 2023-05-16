@@ -15,4 +15,5 @@ public interface InsumoDao {
 
     void estadoStock(int id);
 
+    Insumo buscarInsumo(int id);
 }
