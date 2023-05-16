@@ -1,0 +1,11 @@
+.pocoStock {
+    color: #868600;
+}
+
+.suficienteStock {
+    color: #02b402;
+}
+
+.agotadoStock {
+    color: red;
+}
