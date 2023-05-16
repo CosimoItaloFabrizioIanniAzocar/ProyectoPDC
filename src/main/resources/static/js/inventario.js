@@ -55,7 +55,7 @@ function cargarInventario() {
                         "<td>" + item.idInsumo + "</td>" +
                         "<td>" + item.nombre + "</td>" +
                         "<td>" + item.cantidad + "</td>" +
-                        "<td class='" + estadoClass + "'>" + item.estado + "</td>" +
+                        "<td id='estadotxt'   class='" + estadoClass + "'>" + item.estado + "</td>" +
                         "<td>" + botonEliminar + " " + botonEditar + "</td>" +
                         "</tr>";
                     $(row).appendTo("#tablaInventario tbody");
@@ -126,21 +126,21 @@ function editarInsumo(id) {
             contentType: "application/json",
             success: function (data) {
                 $("#editarCantidad").val(data.cantidad);
+                datos.estado = document.getElementById('estadotxt').value;
                 $.ajax({
                     type: "PUT",
                     url: "http://localhost:8080/api/getEstado/" + Idinsumo,
                     data: JSON.stringify(datos),
                     contentType: "application/json",
                     success: function (data) {
-
-
-
+                    $("#estadotxt").val(data.estado);
+                    window.location.reload();
                     }
                 })
-                window.location.reload();
                 alert("Insumo editado correctamente");
             }
         })
+
 }
 
 
