@@ -92,7 +92,7 @@ function agregarInsumo(){
         contentType: "application/json",
         success: function (datos) {
             if(datos=="success") {
-                alert("Insumo agregado correctamente");
+                alert("Insumo agregado correctamentea");
             }
             window.location.reload();
         }
