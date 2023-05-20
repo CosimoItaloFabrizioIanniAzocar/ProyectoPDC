@@ -31,17 +31,17 @@
 /*MODAL Y FORMULARIO*/
 
 /*MODAL*/
-#modal::backdrop{
+#modal::backdrop, #modalEditar::backdrop, #modalEd::backdrop{
     background-color:rgba(0,0,0,.55);
 
 
 }
 
-#modal{
+#modal, #modalEditar, #modalEd{
     max-width:50ch;
 
 }
-#modal{
+#modal, #modalEditar, #modalEd{
     top:1%;
     width: 75%;
     margin : 0 auto;
@@ -63,7 +63,7 @@
     color: white;
 }
 
-#btn-cerrar-modal{
+#btn-cerrar-modal, #btn-cerrar-editar,#btn-cerrar-edModal,#btn-enviar-edModal{
 
     background-color: #742484;
     padding:5px 15px;
@@ -73,7 +73,7 @@
 
 
 }
-#btn-enviar-modal{
+#btn-enviar-modal, #btn-enviar-editar{
     background-color: #742484;
     padding:5px 15px;
     border-radius: 5px;
@@ -82,8 +82,7 @@
 }
 /*formulario*/
 
-
-#txtfor{
+#txtfor ,#txtTitulo{
     text-align: center;
 }
 
@@ -120,4 +119,5 @@
 
 
 }
+
 
