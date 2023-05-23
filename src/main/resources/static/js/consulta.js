@@ -71,6 +71,12 @@ function citasPaciente() {
         success: function (data) {
             $.each(data, function (i, item) {
 
+                if (item.estado === false) {
+                    item.estado = "Pendiente";
+                }else if(item.estado === true){
+                    item.estado = "Atendida";
+                }
+
                 var row4 = "<tr>" +
                     "<td>" + item.idCita + "</td>" +
                     "<td>" + item.idPaciente + "</td>" +

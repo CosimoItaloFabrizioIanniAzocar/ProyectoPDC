@@ -152,8 +152,46 @@
     float: right;
     background-color: #742484;
     color:  white;
+    padding:5px 15px;
+    border-radius: 5px;
+}
+#btn-historiaClinica{
+    background-color: #742484;
+    color:  white;
+
 }
 
+#btn-Antecedentes{
+    background-color: #742484;
+    color:  white;
 
 
+}
 
+#btn-verHistoria{
+    background-color: #742484;
+    color:  white;
+
+}
+
+#ventanilla button{
+    border-color:  #742484;
+    padding:5px 15px;
+    border-radius: 5px;
+
+}
+
+.modal-footer button{
+    background-color: #742484;
+    color:  white;
+}
+.modal-footer button:hover{
+    background-color: #742484;
+    color:  white;
+}
+
+#btn-nose{
+    background-color: #742484;
+    color:  white;
+
+}

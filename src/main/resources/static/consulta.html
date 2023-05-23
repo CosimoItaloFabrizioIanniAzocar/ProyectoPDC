@@ -108,66 +108,66 @@
 
                         <div id="ventanilla">
 
-                            <button type="button" class="btn-abrir-modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Añadir Historia Clinica</button>
+                            <button type="button" class="btn-abrir-modal" id="btn-historiaClinica" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Añadir Historia Clinica</button>
                             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel21">New message to @getbootstrap</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel21">Historia Clinica</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <form>
                                                 <div class="mb-3">
-                                                    <label for="recipient-name1" class="col-form-label">Recipient:</label>
+                                                    <label for="recipient-name1" class="col-form-label">Recipiente:</label>
                                                     <input type="text" class="form-control" id="recipient-name1">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="message-text1" class="col-form-label">Message:</label>
+                                                    <label for="message-text1" class="col-form-label">Mensaje:</label>
                                                     <textarea class="form-control" id="message-text1"></textarea>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send message</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Open modal for @fat</button>
+                            <button type="button" class="btn btn-primary" id="btn-Antecedentes" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Crear Antecedente</button>
                             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel22">pilin</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel22">Antecedente</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <form>
                                                 <div class="mb-3">
-                                                    <label for="recipient-name2" class="col-form-label">Recipient:</label>
+                                                    <label for="recipient-name2" class="col-form-label">Recipiente:</label>
                                                     <input type="text" class="form-control" id="recipient-name2">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="message-text2" class="col-form-label">Message:</label>
+                                                    <label for="message-text2" class="col-form-label">Mensaje:</label>
                                                     <textarea class="form-control" id="message-text2"></textarea>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send message</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+                            <button type="button" class="btn btn-primary" id ="btn-verHistoria" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Ver Historias</button>
                             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel23">pichulap</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel23">Historias</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -177,14 +177,41 @@
                                                     <input type="text" class="form-control" id="recipient-name3">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="message-text3" class="col-form-label">Message:</label>
+                                                    <label for="message-text3" class="col-form-label">Mensaje:</label>
                                                     <textarea class="form-control" id="message-text3"></textarea>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send message</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id ="btn-nose" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Temporal</button>
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel232">Historias</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name3" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name4">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text3" class="col-form-label">Mensaje:</label>
+                                                    <textarea class="form-control" id="message-text4"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
                                         </div>
                                     </div>
                                 </div>
