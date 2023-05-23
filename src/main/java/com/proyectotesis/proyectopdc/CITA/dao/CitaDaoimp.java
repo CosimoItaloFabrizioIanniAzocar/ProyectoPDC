@@ -35,4 +35,10 @@ public class CitaDaoimp implements CitaDao{
             entityManager.merge(cita);
         }
     }
+
+    public void atenderCita(@PathVariable int id) {
+        Cita cita = entityManager.find(Cita.class,id);
+        cita.setEstado(true);
+        entityManager.merge(cita);
+    }
 }

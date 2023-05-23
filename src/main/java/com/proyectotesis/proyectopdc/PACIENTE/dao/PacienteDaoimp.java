@@ -45,4 +45,10 @@ public class PacienteDaoimp implements PacienteDao{
         return (List<Cita>) entityManager.createQuery(query).setParameter("id", id).getResultList();
     }
 
+    @Override
+    public String getNombrePaciente(int id) {
+        String query = "SELECT nombrePaciente FROM Paciente WHERE id = :id";
+        return (String) entityManager.createQuery(query).setParameter("id", id).getSingleResult();
+    }
+
 }

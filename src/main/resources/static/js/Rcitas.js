@@ -23,7 +23,7 @@ function agregarCita(){
         url: "http://localhost:8080/api/registrarCita",
         dataType: "json",
         success: function (datos) {
-            if(datos=="success") {
+            if(datos==="success") {
                 alert("Paciente resgistrado correctamente");
             }
             else {
@@ -45,6 +45,18 @@ function cargarCitas() {
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarCitas(" + item.idCita + ")'>Eliminar</button>";
                     let botonEditar = "<button class='btn btn-warning' onclick='editarCitas(" + item.idCita + ")'>Editar</button>";
+
+                    if (item.estado === false) {
+                        item.estado = "Pendiente";
+                    }else if(item.estado === true){
+                        item.estado = "Atendida";
+                    }
+                    idcita = item.idCita;
+                    if (item.estado === "Pendiente") {
+                        var botonAtender = "<button class='btn btn-success' onclick='atenderCita(" + item.idPaciente +","+ idcita +")'>Atender</button>";
+                    }else if(item.estado === "Atendida"){
+                        var botonAtender = "<button class='btn btn-info' onclick='atenderCita(" + item.idPaciente +","+ idcita+")' disabled>Atendida</button>";
+                    }
                     var row = "<tr>" +
                         "<td>" + item.idCita + "</td>" +
                         "<td>" + item.idPaciente + "</td>" +
@@ -52,7 +64,7 @@ function cargarCitas() {
                         "<td>" + item.hora + "</td>" +
                         "<td>" + item.tipo + "</td>" +
                         "<td>" + item.estado + "</td>" +
-                        "<td>" + botonEliminar+ " " + botonEditar + "</td>" +
+                        "<td>" + botonEliminar+ " " + botonEditar + " "+botonAtender+"</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaCitas tbody");
@@ -91,7 +103,6 @@ function editarCitas(id) {
             $("#editarHora").val(data.hora);
             $("#editarTipo").val(data.tipo);
 
-            datos = data;
             document.getElementById("modalEd").showModal();
 
         }
@@ -122,3 +133,7 @@ function guardarCitas (){
         }
     })
 }
+function atenderCita(id,idcita){
+    window.location.href='consulta.html?id=' + id +"&idcita="+ idcita;
+}
+

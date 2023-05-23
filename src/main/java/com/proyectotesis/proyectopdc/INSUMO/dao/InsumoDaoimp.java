@@ -51,7 +51,7 @@ public class InsumoDaoimp implements InsumoDao{
         insumo.setCantidad(insumo.getCantidad());
         if (insumo.getCantidad()<=0){
             insumo.setEstado("Agotado");
-        }else if(insumo.getCantidad()<=50){
+        }else if(insumo.getCantidad()<50){
             insumo.setEstado("Poco Stock");
         }else{
             insumo.setEstado("Suficiente");

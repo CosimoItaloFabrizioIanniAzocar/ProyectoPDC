@@ -32,4 +32,7 @@ public class PacienteController {
 
     @RequestMapping(value = "api/citasPaciente/{id}",method = RequestMethod.GET)
     public List<Cita> citasPaciente(@PathVariable int id) {return pacienteDao.citasPaciente(id);}
+
+    @RequestMapping(value = "api/getNombrePaciente/{id}",method = RequestMethod.GET)
+    public String getNombrePaciente(@PathVariable int id) {return pacienteDao.getNombrePaciente(id);}
 }

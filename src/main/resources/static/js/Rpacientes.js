@@ -29,6 +29,11 @@ btnCerrarModal.addEventListener("click",()=>{
             success: function (data) {
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
+                    if (item.sexoPaciente == "1") {
+                        item.sexoPaciente = "Masculino";
+                    }else if(item.sexoPaciente == "2"){
+                        item.sexoPaciente = "Femenino";
+                    }
                     var row = "<tr>" +
                         "<td>" + item.idPaciente + "</td>" +
                         "<td>" + item.nombrePaciente + "</td>" +
@@ -57,7 +62,7 @@ btnCerrarModal.addEventListener("click",()=>{
         $.ajax({
             type: "DELETE",
             url: "http://localhost:8080/api/pacientes/" + id,
-            success: function (response) {
+            success: function () {
                 window.location.reload();
             }
         });
@@ -85,13 +90,14 @@ btnCerrarModal.addEventListener("click",()=>{
             url: "http://localhost:8080/api/registrarPaciente",
             data: JSON.stringify(datos),
             contentType: "application/json",
-            success: function (datos) {
-                if(datos=="success") {
+            success: function () {
                     alert("Paciente resgistrado correctamente");
-                }
                 window.location.reload();
             }
 
         })
  }
+
+var fechaActual = new Date().toISOString().split("T")[0];
+document.getElementById("edadPaciente").max = fechaActual;
 

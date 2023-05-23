@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Consulta</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/Usuario.css">
+    <link rel="stylesheet" href="css/consulta.css">
+    <link href="https://code.jquery.com/jquery-3.6.4.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body id="page-top">
+<div id="wrapper">
+
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav id="txttop" class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <form class="form-inline">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </form>
+
+                <!-- Topbar Search -->
+
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-white small">Douglas McGee</span>
+                            <img class="img-profile rounded-circle"
+                                 src="img/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-white">Atención de cita</h1>
+                <p id="textmb4" class="mb-4">Este modulo permite atender la citas previamente agendadas.</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+
+                        <div id="ventanilla">
+
+                            <button type="button" class="btn-abrir-modal" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Añadir Historia Clinica</button>
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel21">New message to @getbootstrap</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name1" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name1">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text1" class="col-form-label">Message:</label>
+                                                    <textarea class="form-control" id="message-text1"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Open modal for @fat</button>
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel22">pilin</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name2" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name2">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text2" class="col-form-label">Message:</label>
+                                                    <textarea class="form-control" id="message-text2"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel23">pichulap</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name3" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text3" class="col-form-label">Message:</label>
+                                                    <textarea class="form-control" id="message-text3"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <dialog onclick id="modal">
+                                <form action="#" class="form" >
+
+                                    <div>
+                                        <h2 id="txtfor">Formulario</h2>
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label >Nombre</label>
+                                        <input type="text" placeholder="Nombre Completo" />
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label>Fecha de nacimiento</label>
+                                            <input type="date" placeholder="" />
+                                        </div>
+
+                                        <div class="body-modal" id="select-box">
+                                            <label>Sexo</label>
+                                            <select>
+                                                <option value="0">Seleccione</option>
+                                                <option value="1">Masculino</option>
+                                                <option value="2">Femenino</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label> RUT </label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Telefono</label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="body-modal">
+                                        <label>Hora Paciente</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                    <div class="body-modal">
+                                        <label>Pasaporte</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                    <div class="body-modal">
+                                        <label>Partnacimiento</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Direccion</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Email</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                </form>
+                                <div>
+                                    <button id="btn-cerrar-modal">Cancelar</button>
+                                    <button id="btn-enviar-modal">Agregar</button>
+                                </div>
+                            </dialog>
+
+                            <button id="btnFinalizar" onclick="citaAtendida()">Finalizar Atención</button>
+                        </div>
+
+                    </div>
+                    <div class="formularioConsulta">
+                        <div>
+                        <table class="table table-bordered" id="tablaDelPaciente1" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Fecha de Nacimiento</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody1">
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered" id="tablaDelPaciente2" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+
+                                <th>Rut</th>
+                                <th>Pasaporte</th>
+                                <th>Partida Nacimiento</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="tbody2">
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered" id="tablaDelPaciente3" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Sexo</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Email</th>
+
+                            </tr>
+                            </thead>
+
+                            <tbody id="tbody3">
+
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <div>
+                            </table>
+                            <table class="table table-bordered" id="tablaDelPaciente4" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>ID de la Cita</th>
+                                    <th>ID Paciente</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Tipo</th>
+                                    <th>Estado</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody id="tbody4">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        </div>
+
+
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer  id="footer" class="sticky-footer ">
+            <div  class="container my-auto">
+                <div class="copyright text-center my-auto text-white">
+                    <span> Tupediatradecorazon@gmail.com</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/consulta.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

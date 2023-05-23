@@ -17,6 +17,8 @@ public interface PacienteDao {
     void editarPaciente(int id, Paciente paciente);
 
     List<Cita> citasPaciente(int id);
+
+    String getNombrePaciente(int id);
 }
 
 

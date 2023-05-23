@@ -179,3 +179,7 @@ function initButtons() {
 
 initButtons();
 load();
+
+var fechaActual = new Date().toISOString().split("T")[0];
+document.getElementById("fecha").min = fechaActual;
+
