@@ -1,9 +1,11 @@
 package com.proyectotesis.proyectopdc.PACIENTE.dao;
 
 import com.proyectotesis.proyectopdc.CITA.models.Cita;
+import com.proyectotesis.proyectopdc.HISTORIACLINICA.models.HistoriaClinica;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,9 @@ public class PacienteDaoimp implements PacienteDao{
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+
 
     @SuppressWarnings("unchecked")
     @Override
@@ -49,6 +54,11 @@ public class PacienteDaoimp implements PacienteDao{
     public String getNombrePaciente(int id) {
         String query = "SELECT nombrePaciente FROM Paciente WHERE id = :id";
         return (String) entityManager.createQuery(query).setParameter("id", id).getSingleResult();
+    }
+
+    @Override
+    public List<HistoriaClinica> historiasClinicasPaciente(int id) {
+        return null;
     }
 
 }

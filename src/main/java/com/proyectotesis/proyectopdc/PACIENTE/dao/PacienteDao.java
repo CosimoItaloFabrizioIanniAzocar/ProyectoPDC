@@ -1,6 +1,7 @@
 package com.proyectotesis.proyectopdc.PACIENTE.dao;
 
 import com.proyectotesis.proyectopdc.CITA.models.Cita;
+import com.proyectotesis.proyectopdc.HISTORIACLINICA.models.HistoriaClinica;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface PacienteDao {
     void editarPaciente(int id, Paciente paciente);
 
     List<Cita> citasPaciente(int id);
+
+    List<HistoriaClinica> historiasClinicasPaciente(int id);
 
     String getNombrePaciente(int id);
 }
