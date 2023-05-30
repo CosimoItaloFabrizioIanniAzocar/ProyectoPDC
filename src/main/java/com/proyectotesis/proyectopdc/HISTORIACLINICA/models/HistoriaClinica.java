@@ -16,6 +16,8 @@ public class HistoriaClinica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter @Column(name = "id_historiaclinica")
     private int idHistoriaClinica;
+    @Getter @Setter@Column(name = "id_paciente")
+    private int idPaciente;
     @Getter @Setter@Column(name = "nombre_paciente")
     private String nombreYapellido;
     @Getter @Setter@Column(name = "edad")

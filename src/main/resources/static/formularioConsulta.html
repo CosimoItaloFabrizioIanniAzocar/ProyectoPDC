@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Consulta</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/Usuario.css">
+    <link rel="stylesheet" href="css/consulta.css">
+    <link href="https://code.jquery.com/jquery-3.6.4.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body id="page-top">
+<div id="wrapper">
+
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav id="txttop" class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <form class="form-inline">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </form>
+
+                <!-- Topbar Search -->
+
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-white small">Douglas McGee</span>
+                            <img class="img-profile rounded-circle"
+                                 src="img/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-white">Atención de cita</h1>
+                <p id="textmb4" class="mb-4">Este modulo permite atender la citas previamente agendadas.</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+
+                        <div id="ventanilla">
+
+                            <button type="button" class="btn-abrir-modal" id="btn-historiaClinica" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Añadir Historia Clinica</button>
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel21">Historia Clinica</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btn-Antecedentes" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Crear Antecedente</button>
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel22">Antecedente</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name2" class="col-form-label">Recipiente:</label>
+                                                    <input type="text" class="form-control" id="recipient-name2">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text2" class="col-form-label">Mensaje:</label>
+                                                    <textarea class="form-control" id="message-text2"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id ="btn-verHistoria" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Ver Historias</button>
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel23">Historias</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name3" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text3" class="col-form-label">Mensaje:</label>
+                                                    <textarea class="form-control" id="message-text3"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id ="btn-nose" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Temporal</button>
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel232">Historias</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name3" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name4">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text3" class="col-form-label">Mensaje:</label>
+                                                    <textarea class="form-control" id="message-text4"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <dialog onclick id="modal">
+                                <form action="#" class="form" >
+
+                                    <div>
+                                        <h2 id="txtfor">Formulario</h2>
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label >Nombre</label>
+                                        <input type="text" placeholder="Nombre Completo" />
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label>Fecha de nacimiento</label>
+                                            <input type="date" placeholder="" />
+                                        </div>
+
+                                        <div class="body-modal" id="select-box">
+                                            <label>Sexo</label>
+                                            <select>
+                                                <option value="0">Seleccione</option>
+                                                <option value="1">Masculino</option>
+                                                <option value="2">Femenino</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label> RUT </label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Telefono</label>
+                                            <input type="text" placeholder="" />
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="body-modal">
+                                        <label>Hora Paciente</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                    <div class="body-modal">
+                                        <label>Pasaporte</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                    <div class="body-modal">
+                                        <label>Partnacimiento</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Direccion</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label>Email</label>
+                                        <input type="text" placeholder="" />
+                                    </div>
+                                </form>
+                                <div>
+                                    <button id="btn-cerrar-modal">Cancelar</button>
+                                    <button id="btn-enviar-modal">Agregar</button>
+                                </div>
+                            </dialog>
+
+                            <button id="btnFinalizar" onclick="citaAtendida()">Finalizar Atención</button>
+                        </div>
+
+                    </div>
+                    <div class="formularioConsulta">
+
+                                    <div class="izquierda">
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Nombres y Apellidos</label>
+                                            <textarea class="form-control" id="txtNombreApellido"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Edad</label>
+                                            <textarea class="form-control" id="txtEdad"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Fecha</label>
+                                            <textarea class="form-control" id="txtFecha"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Dirección</label>
+                                            <textarea class="form-control" id="txtDireccion"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Telefono</label>
+                                            <textarea class="form-control" id="txtTelefono"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Correo</label>
+                                            <textarea class="form-control" id="txtCorreo"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Nombre de la Madre</label>
+                                            <textarea class="form-control" id="txtNombreMadre"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Nombre de la Padre</label>
+                                            <textarea class="form-control" id="txtNombrePadre"></textarea>
+                                        </div>
+
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="example5">Antecendentes Perinatales</h1>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Antecedentes Patológicos de la Madre</label>
+                                            <textarea class="form-control" id="txtAntPatoMadre"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Parto Instrumentalizado</h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionPartoInstru" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionPartoInstru" value="No"> No
+                                                </label>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="izquierda2">
+                                        <div class="mb-3">
+                                            <h6> Instrumentalizado: Forceps </h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionForceps" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionForceps" value="No"> No
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Cesárea  Programada </h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionCesareaProgra" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionCesareaProgra" value="No"> No
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Emergencia</h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="emergencia" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="emergencia" value="No"> No
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">¿Por que?(Emergencia)</label>
+                                            <textarea class="form-control" id="txtPorqueEmergencia"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Edad Gestacional </label>
+                                            <textarea class="form-control" id="txtEdadGestacional"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Peso </label>
+                                            <textarea class="form-control" id="txtPeso"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Talla </label>
+                                            <textarea class="form-control" id="txtTalla"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">CC </label>
+                                            <textarea class="form-control" id="txtCc"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Lloró y respiró al nacer?</h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionLloroRespiro" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionLoroRespiro" value="No"> No
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>REANIMACION</h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionReanimacion" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionReanimacion" value="No"> No
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">¿Por que?(REANIMACION)</label>
+                                            <textarea class="form-control" id="txtPorqueReanimacion"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="derecha">
+                                        <div class="mb-3">
+                                            <h6>FORMULA</h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionFormula" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionFormula" value="No"> No
+                                                </label>
+                                            </form>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Mixta </h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionMixta" value="Si"> Si
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionMixta" value="No"> No
+                                                </label>
+                                            </form>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <h6>Alimentacion Complementaria </h6>
+                                            <form>
+                                                <label>
+                                                    <input type="radio" name="opcionComplemetaria" value="TRADICIONAL"> TRADICIONAL
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="opcionComplemetaria" value="BABYLEDWEANING"> BABYLEDWEANING
+                                                </label>
+                                            </form>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">RECORDATORIO DE ALIMENTACION</label>
+                                            <textarea class="form-control" id="txtRecordatorio"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Desarrollo Psicomotor</label>
+                                            <textarea class="form-control" id="txtPsicomotor"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Desarrollo del Lenguaje</label>
+                                            <textarea class="form-control" id="txtLenguaje"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">ENFERMEDADES RECURRENTES DEL PACIENTES O ENFERMEDADES CRONICAS</label>
+                                            <textarea class="form-control" id="txtCronicas"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Antecedentes Familiares</label>
+                                            <textarea class="form-control" id="txtAntFamiliares"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Intervención Quirúrgica</label>
+                                            <textarea class="form-control" id="txtQuirurgica"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="derecha2">
+
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Alergia a alimentos</label>
+                                            <textarea class="form-control" id="txtAlegiaAlimento"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Alergia a medicamentos</label>
+                                            <textarea class="form-control" id="txtAlegiaMedicamento"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Historial de Vacunas</label>
+                                            <textarea class="form-control" id="txtVacuna"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Motivo de Consulta</label>
+                                            <textarea class="form-control" id="txtMotivo"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Enfermedad Actual</label>
+                                            <textarea class="form-control" id="txtEnfActual"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Examen físico </label>
+                                            <textarea class="form-control" id="txtExamenFisico"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Impresión Diagnóstica</label>
+                                            <textarea class="form-control" id="txtImDiagnositco"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Tratamiento Médico</label>
+                                            <textarea class="form-control" id="txtTratmiento"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Recomendaciones</label>
+                                            <textarea class="form-control" id="txtRecomendacion"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Medidas Preventivas</label>
+                                            <textarea class="form-control" id="txtPreventivas"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Próxima Cita</label>
+                                            <textarea class="form-control" id="txtProximaCita"></textarea>
+                                        </div>
+                                    </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer  id="footer" class="sticky-footer ">
+            <div  class="container my-auto">
+                <div class="copyright text-center my-auto text-white">
+                    <span> Tupediatradecorazon@gmail.com</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

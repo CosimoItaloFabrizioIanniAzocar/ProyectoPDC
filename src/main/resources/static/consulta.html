@@ -108,37 +108,12 @@
 
                         <div id="ventanilla">
 
-                            <button type="button" class="btn-abrir-modal" id="btn-historiaClinica" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Añadir Historia Clinica</button>
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel21">Historia Clinica</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name1" class="col-form-label">Recipiente:</label>
-                                                    <input type="text" class="form-control" id="recipient-name1">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text1" class="col-form-label">Mensaje:</label>
-                                                    <textarea class="form-control" id="message-text1"></textarea>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                            <button type="button" class="btn btn-primary">Guardar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button"  id="btn-historiaClinica" onclick="crearHistoria()">Añadir Historia Clinica</button>
+
                             <button type="button" class="btn btn-primary" id="btn-Antecedentes" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@fat">Crear Antecedente</button>
                             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog">
-                                    <div class="modal-content">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalLabel22">Antecedente</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -428,6 +403,7 @@
 
 <!-- Page level custom scripts -->
 <script src="js/consulta.js"></script>
+<script src="js/formularioHistoriaClinica.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
