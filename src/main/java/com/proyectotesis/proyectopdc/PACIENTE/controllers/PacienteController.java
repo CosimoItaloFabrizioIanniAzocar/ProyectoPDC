@@ -2,6 +2,7 @@ package com.proyectotesis.proyectopdc.PACIENTE.controllers;
 
 
 import com.proyectotesis.proyectopdc.CITA.models.Cita;
+import com.proyectotesis.proyectopdc.HISTORIACLINICA.models.HistoriaClinica;
 import com.proyectotesis.proyectopdc.PACIENTE.models.Paciente;
 import com.proyectotesis.proyectopdc.PACIENTE.dao.PacienteDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +36,6 @@ public class PacienteController {
 
     @RequestMapping(value = "api/getNombrePaciente/{id}",method = RequestMethod.GET)
     public String getNombrePaciente(@PathVariable int id) {return pacienteDao.getNombrePaciente(id);}
+    @RequestMapping(value = "api/getHistorias/{id}",method = RequestMethod.GET)
+    public List<HistoriaClinica> getHistorias(@PathVariable int id) {return pacienteDao.historiasClinicasPaciente(id);}
 }

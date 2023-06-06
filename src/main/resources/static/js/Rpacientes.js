@@ -30,7 +30,7 @@ btnCerrarModal.addEventListener("click",()=>{
             success: function (data) {
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
-                    let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer()'>Ver</button>";
+                    let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer(" + item.idPaciente + ")'>Ver</button>";
                     if (item.sexoPaciente == "1") {
                         item.sexoPaciente = "Masculino";
                     }else if(item.sexoPaciente == "2"){
@@ -103,10 +103,48 @@ btnCerrarModal.addEventListener("click",()=>{
 var fechaActual = new Date().toISOString().split("T")[0];
 document.getElementById("edadPaciente").max = fechaActual;
 
-function abrirVer() {
+function abrirVer(id) {
     document.getElementById("modalVer").showModal();
+    cargarHistorias(id);
+    cargarCitasDelPaciente(id);
 
 }
 function  cerrarVer() {
     document.getElementById("modalVer").close();
+}
+
+function cargarHistorias(id){
+    $.ajax({
+        type: "GET",
+        url:"http://localhost:8080/api/getHistorias/"+id,
+        dataType: "json",
+        success: function (data) {
+            $.each(data, function (i, item) {
+                var row = "<tr>" +
+                    "<td>" + item.idHistoriaClinica + "</td>" +
+                    "<td>" + item.idCita + "</td>" +
+                    "</tr>";
+                $(row).appendTo("#historiaClinica tbody");
+            });
+        }
+    })
+}
+
+function cargarCitasDelPaciente(id){
+
+    $.ajax({
+        type: "GET",
+        url:"http://localhost:8080/api/citasPaciente/"+id,
+        dataType: "json",
+        success: function (data) {
+            $.each(data, function (i, item) {
+                var row = "<tr>" +
+                    "<td>" + item.idCita + "</td>" +
+                    "<td>" + item.fecha + "</td>" +
+                    "<td>" + item.tipo + "</td>" +
+                    "</tr>";
+                $(row).appendTo("#tablaCitas tbody");
+            });
+        }
+    })
 }

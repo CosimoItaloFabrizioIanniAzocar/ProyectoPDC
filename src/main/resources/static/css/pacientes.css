@@ -116,8 +116,27 @@
 .form .columna-A{
     display: flex;
     column-gap: 15px;
+}
 
+.contenidoModal{
+    display: flex;
+}
+
+.contenidoModal div{
+    flex:1;
 
 }
+
+#txtTitulo{
+    border-style: solid;
+}
+#txttitulohistorial{
+    border-style: solid;
+}
+#txttitulohistorial2{
+    border-style: solid;
+}
+
+
 
 
