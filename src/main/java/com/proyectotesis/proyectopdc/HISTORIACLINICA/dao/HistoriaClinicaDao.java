@@ -1,6 +1,8 @@
 package com.proyectotesis.proyectopdc.HISTORIACLINICA.dao;
 
 import com.proyectotesis.proyectopdc.HISTORIACLINICA.models.HistoriaClinica;
+import com.proyectotesis.proyectopdc.INSUMO.models.Insumo;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -10,7 +12,7 @@ public interface HistoriaClinicaDao {
 
     void eliminarHistoriaClinica(int id);
 
-    void registrarHistoriaClinica(HistoriaClinica historiaClinica);
+    String registrarHistoriaClinica(HistoriaClinica historiaClinica);
 
     HistoriaClinica buscarHistoriaClinica(int id);
 

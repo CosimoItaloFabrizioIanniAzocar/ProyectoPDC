@@ -3,6 +3,7 @@ package com.proyectotesis.proyectopdc.HISTORIACLINICA.dao;
 import com.proyectotesis.proyectopdc.HISTORIACLINICA.models.HistoriaClinica;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,17 +29,17 @@ public class HistoriaClinicaDaoimp implements HistoriaClinicaDao {
     }
 
     @Override
-    public void registrarHistoriaClinica(HistoriaClinica historiaClinica) {
+    public String registrarHistoriaClinica(HistoriaClinica historiaClinica) {
     entityManager.persist(historiaClinica);
+    return "success";
     }
 
     @Override
-    public HistoriaClinica buscarHistoriaClinica(int id) {
-        return null;
-    }
+    public HistoriaClinica buscarHistoriaClinica(int id) {return entityManager.find(HistoriaClinica.class, id);}
 
     @Override
     public void editarHistoriaClinica(int id, HistoriaClinica historiaClinica) {
 
     }
+
 }

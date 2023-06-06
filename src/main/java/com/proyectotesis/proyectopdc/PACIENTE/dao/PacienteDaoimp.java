@@ -56,9 +56,12 @@ public class PacienteDaoimp implements PacienteDao{
         return (String) entityManager.createQuery(query).setParameter("id", id).getSingleResult();
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<HistoriaClinica> historiasClinicasPaciente(int id) {
-        return null;
+        String query = "FROM HistoriaClinica WHERE idPaciente = :id";
+        return (List<HistoriaClinica>) entityManager.createQuery(query).setParameter("id", id).getResultList();
+
     }
 
 }

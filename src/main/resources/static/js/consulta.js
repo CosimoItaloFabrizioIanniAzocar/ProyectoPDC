@@ -103,6 +103,22 @@ function citaAtendida (){
             alert("Cita atendida correctamente")
         }
     })
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/api/descuentoCantidad",
+        contentType: "application/json",
+        success: function (data) {
+        }
+    })
+
+
+}
+
+function crearHistoria(){
+    let id = obtenerParametroURL('id');
+    let idcita = obtenerParametroURL('idcita');
+    window.location.href='formularioConsulta.html?id=' + id+"&idcita="+ idcita;
 }
 
 
