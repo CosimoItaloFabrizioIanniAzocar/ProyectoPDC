@@ -3,6 +3,7 @@
 $(document).ready(function () {
     cargarPacientes();
 
+
 });
 const btnAbrirModal=
     document.querySelector("#btn-abrir-modal");
@@ -29,6 +30,7 @@ btnCerrarModal.addEventListener("click",()=>{
             success: function (data) {
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
+                    let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer()'>Ver</button>";
                     if (item.sexoPaciente == "1") {
                         item.sexoPaciente = "Masculino";
                     }else if(item.sexoPaciente == "2"){
@@ -45,7 +47,7 @@ btnCerrarModal.addEventListener("click",()=>{
                         "<td>" + item.direccionPaciente + "</td>" +
                         "<td>" + item.telefonoPaciente + "</td>" +
                         "<td>" + item.emailPaciente + "</td>" +
-                        "<td>" + botonEliminar+"</td>" +
+                        "<td>" + botonEliminar+ " "+botonVer + "</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -101,3 +103,10 @@ btnCerrarModal.addEventListener("click",()=>{
 var fechaActual = new Date().toISOString().split("T")[0];
 document.getElementById("edadPaciente").max = fechaActual;
 
+function abrirVer() {
+    document.getElementById("modalVer").showModal();
+
+}
+function  cerrarVer() {
+    document.getElementById("modalVer").close();
+}

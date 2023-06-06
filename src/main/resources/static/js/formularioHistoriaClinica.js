@@ -76,6 +76,9 @@ function registrarHistoria(){
         datos.medidasPreventivas = document.getElementById('txtPreventivas').value;
         datos.proximaCita = document.getElementById('txtProximaCita').value;
 
+
+
+
     $.ajax({
         type: "POST",
         url: "http://localhost:8080/api/registrarHistoriaClinica",
@@ -83,15 +86,12 @@ function registrarHistoria(){
         contentType: "application/json",
         data: JSON.stringify(datos),
         success: function (datos) {
-            if(datos==="success") {
-                alert("Paciente resgistrado correctamente");
-                volverConsulta();
-            }
-            else {
-                alert("Error al registrar paciente");
-            }
-        }
 
-    })
+
+        }
+    });
+    alert("Historia Clinica Registrada");
+    window.location.href='consulta.html?id=' + datos.idPaciente+"&idcita="+ datos.idCita;
 
 }
+
