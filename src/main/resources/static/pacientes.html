@@ -296,6 +296,72 @@
 
                             </div>
                         </div>
+                        <div id="ventanillaEditarP" align="right">
+                            <dialog onclick id="modalEdP">
+
+                                <form action="#" class="form" >
+
+                                    <div>
+                                        <h2 id="txtTitulo2">Editar Formulario</h2>
+                                    </div>
+
+                                    <div class="body-modal">
+                                        <label >Nombre</label>
+                                        <input id="editarNombreP" type="text" placeholder="Nombre Completo" />
+                                    </div>
+
+                                    <div class="columna-A">
+                                        <div class="body-modal">
+                                            <label>Fecha de nacimiento</label>
+                                            <input id="editarNacimientoP" type="date" placeholder="" />
+                                        </div>
+
+                                        <div class="body-modal" id="select-boxx">
+                                            <label>Rut</label>
+                                            <input id="editarRutP" type="number" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label> Pasaporte </label>
+                                            <input id="editarPasaporteP" type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label> Partida de Nacimiento </label>
+                                            <input id="editarPartidaP" type="text" placeholder="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="columna-A">
+
+                                        <div class="body-modal" >
+                                            <label>Sexo</label>
+                                            <select id="editarSexoPaciente">
+                                                <option value="0">Seleccione</option>
+                                                <option value="1">Masculino</option>
+                                                <option value="2">Femenino</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Direccion</label>
+                                            <input id="editarDireccionPaciente" type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Telefono</label>
+                                            <input id="editarTelefonoPaciente" type="text" placeholder="" />
+                                        </div>
+                                        <div class="body-modal">
+                                            <label>Email</label>
+                                            <input id="editarEmailPaciente" type="text" placeholder="" />
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+                                    <button id="btn-cerrar-edModalP">Cancelar</button>
+                                    <button id="btn-enviar-edModal"  onclick="guardarPacienteEdit()">Agregar</button>
+                                </div>
+                            </dialog>
+
+                        </div>
 
                         <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Pacientes</h6>
                     </div>

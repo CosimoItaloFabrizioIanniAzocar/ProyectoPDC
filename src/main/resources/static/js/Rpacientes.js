@@ -5,6 +5,12 @@ $(document).ready(function () {
 
 
 });
+const btnCerrarModalEditarP = document.querySelector("#btn-cerrar-edModalP");
+const modalEdP = document.querySelector("#modalEdP");
+
+btnCerrarModalEditarP.addEventListener("click",()=>{
+    modalEdP.close();
+})
 const btnAbrirModal=
     document.querySelector("#btn-abrir-modal");
 const btnCerrarModal=
@@ -31,6 +37,7 @@ btnCerrarModal.addEventListener("click",()=>{
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
                     let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer(" + item.idPaciente + ")'>Ver</button>";
+                    let botonEditar = "<button class='btn btn-info' onclick='editarPaciente(" + item.idPaciente + ")'>Editar</button>";
                     if (item.sexoPaciente == "1") {
                         item.sexoPaciente = "Masculino";
                     }else if(item.sexoPaciente == "2"){
@@ -47,7 +54,7 @@ btnCerrarModal.addEventListener("click",()=>{
                         "<td>" + item.direccionPaciente + "</td>" +
                         "<td>" + item.telefonoPaciente + "</td>" +
                         "<td>" + item.emailPaciente + "</td>" +
-                        "<td>" + botonEliminar+ " "+botonVer + "</td>" +
+                        "<td>" + botonEliminar+ " "+botonVer+ " "+botonEditar+"</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -70,7 +77,56 @@ btnCerrarModal.addEventListener("click",()=>{
         });
     }
 
+let idPacientes = null;
+function  editarPaciente (id){
+        idPacientes = id;
+    $.ajax({
+        type: "GET",
+        url:"http://localhost:8080/api/buscarPaciente/"+ idPacientes,
+        dataType: "json",
+        success: function (data) {
 
+            $("#editarNombreP").val(data.nombrePaciente);
+            $("#editarNacimientoP").val(data.fechaNacimiento);
+            $("#editarRutP").val(data.rutPaciente);
+            $("#editarPasaporteP").val(data.pasaportePaciente);
+            $("#editarPartidaP").val(data.partidaNacimientoPaciente);
+            $("#editarSexoPaciente").val(data.sexoPaciente);
+            $("#editarDireccionPaciente").val(data.direccionPaciente);
+            $("#editarTelefonoPaciente").val(data.telefonoPaciente);
+            $("#editarEmailPaciente").val(data.emailPaciente);
+
+
+            document.getElementById("modalEdP").showModal();
+
+        }
+    })
+}
+
+function guardarPacienteEdit() {
+    let datos = {};
+    datos.nombrePaciente = $("#editarNombreP").val();
+    datos.fechaNacimiento = $("#editarNacimientoP").val();
+    datos.rutPaciente = $("#editarRutP").val();
+    datos.pasaportePaciente = $("#editarPasaporteP").val();
+    datos.partidaNacimientoPaciente = $("#editarPartidaP").val();
+    datos.sexoPaciente = $("#editarSexoPaciente").val();
+    datos.direccionPaciente = $("#editarDireccionPaciente").val();
+    datos.telefonoPaciente = $("#editarTelefonoPaciente").val();
+    datos.emailPaciente = $("#editarEmailPaciente").val();
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/api/editarPaciente/"+idPacientes,
+        data: JSON.stringify(datos),
+        contentType: "application/json",
+        success: function () {
+            alert("Paciente editado correctamente");
+            window.location.reload();
+        }
+
+    })
+}
 
 //*agregar paciente*//
 

@@ -39,8 +39,11 @@ public class PacienteDaoimp implements PacienteDao{
     public  Paciente buscarPaciente(int id){return entityManager.find(Paciente.class,id);}
     @Override
     public void editarPaciente(@PathVariable int id, Paciente paciente) {
-        entityManager.find(Paciente.class, id);
-        entityManager.merge(paciente);
+        Paciente pacienteExistente= entityManager.find(Paciente.class, id);
+        if(pacienteExistente!=null) {
+            paciente.setIdPaciente(id);
+            entityManager.merge(paciente);
+        }
     }
 
     @SuppressWarnings("unchecked")
