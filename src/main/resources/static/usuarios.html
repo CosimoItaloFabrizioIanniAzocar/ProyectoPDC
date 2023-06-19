@@ -37,16 +37,18 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion id">
 
             <!-- Sidebar - Brand -->
+           <li>
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div>
                     <i class="fa-solid fa-heart"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">USUARIOS</div>
             </a>
-
+           </li>
             <!-- Divider -->
+            <li>
             <hr class="sidebar-divider my-0">
-
+            </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
@@ -55,6 +57,7 @@
             </li>
 
             <!-- Divider -->
+            <li>
             <hr class="sidebar-divider">
 
 
@@ -62,7 +65,7 @@
             <div class="sidebar-heading">
                 Modulos
             </div>
-
+            </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="inventario.html">
@@ -97,13 +100,14 @@
             </li>
 
             <!-- Divider -->
+            <li>
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -128,18 +132,16 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-
-
+                        <li>
                         <div class="topbar-divider d-none d-sm-block"></div>
-
+                        </li>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-white small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="img/undraw_profile.svg" alt="img Perfil">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -174,92 +176,16 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-white">Gestion de usuarios</h1>
-                    <p id="textmb4" class="mb-4">Este modulo permite editar / eliminar / buscar usuarios.</p>
+                    <p id="textmb4" class="mb-4">Este módulo permite editar / eliminar / buscar usuarios.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-
-                            <div id="ventanilla" align="right">
-                                <button id="btn-abrir-modal" >Agrendar Hora </button>
-                                <dialog onclick id="modal">
-
-                               <form action="#" class="form" >
-
-                                   <div>
-                                    <h2 id="txtfor">Formulario</h2>
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label >Nombre</label>
-                                        <input type="text" placeholder="Nombre Completo" />
-                                    </div>
-
-                                   <div class="columna-A">
-                                       <div class="body-modal">
-                                           <label>Fecha de nacimiento</label>
-                                           <input type="date" placeholder="" />
-                                       </div>
-
-                                       <div class="body-modal" id="select-box">
-                                           <label>Sexo</label>
-                                           <select>
-                                                  <option value="0">Seleccione</option>
-                                                  <option value="1">Masculino</option>
-                                                  <option value="2">Femenino</option>
-                                           </select>
-
-                                       </div>
-                                   </div>
-
-                                   <div class="columna-A">
-                                       <div class="body-modal">
-                                           <label> RUT </label>
-                                           <input type="text" placeholder="" />
-                                       </div>
-                                       <div class="body-modal">
-                                           <label>Telefono</label>
-                                           <input type="text" placeholder="" />
-                                       </div>
-
-                                   </div>
-
-
-                                    <div class="body-modal">
-                                        <label>Hora Paciente</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-                                   <div class="body-modal">
-                                       <label>Pasaporte</label>
-                                       <input type="text" placeholder="" />
-                                   </div>
-                                    <div class="body-modal">
-                                        <label>Partnacimiento</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label>Direccion</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-
-                                    <div class="body-modal">
-                                        <label>Email</label>
-                                        <input type="text" placeholder="" />
-                                    </div>
-                               </form>
-                                    <div>
-                                    <button id="btn-cerrar-modal">Cancelar</button>
-                                        <button id="btn-enviar-modal">Agregar</button>
-                                    </div>
-                                </dialog>
-
-                            </div>
                             <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de usuarios</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="tablaUsuarios" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="tablaUsuarios" >
                                     <thead>
                                         <tr>
                                             <th>ID</th>

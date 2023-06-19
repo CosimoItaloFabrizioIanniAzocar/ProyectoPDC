@@ -11,7 +11,7 @@ const modal=
     document.querySelector("#modal");
 
 btnAbrirModal.addEventListener("click",()=>{
-    modal.showModal(false);
+    modal.showModal();
 })
 
 btnCerrarModal.addEventListener("click",()=>{
@@ -51,7 +51,7 @@ function cargarInventario() {
                             estadoClass = '';
                     }
 
-                    var row = "<tr>" +
+                    let row = "<tr>" +
                         "<td>" + item.idInsumo + "</td>" +
                         "<td>" + item.nombre + "</td>" +
                         "<td>" + item.cantidad + "</td>" +
@@ -72,7 +72,7 @@ function eliminarInsumo(id) {
     $.ajax({
         type: "DELETE",
         url: "http://localhost:8080/api/eliminarInsumo/" + id,
-        success: function (response) {
+        success: function () {
             window.location.reload();
         }
     });
@@ -91,7 +91,7 @@ function agregarInsumo(){
         data: JSON.stringify(datos),
         contentType: "application/json",
         success: function (datos) {
-            if(datos=="success") {
+            if(datos==="success") {
                 alert("Insumo agregado correctamentea");
             }
             window.location.reload();
@@ -109,7 +109,6 @@ function editarInsumo(id) {
         dataType: "json",
         success: function (data) {
             $("#editarCantidad").val(data.cantidad);
-            datos = data;
             document.getElementById("modalEditar").showModal();
 
         }

@@ -37,16 +37,18 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
+    <li>
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       <div>
         <i class="fa-solid fa-heart"></i>
       </div>
         <div class="sidebar-brand-text mx-3">INVENTARIO</div>
     </a>
-
+    </li>
     <!-- Divider -->
+    <li>
     <hr class="sidebar-divider my-0">
-
+    </li>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="index.html">
@@ -56,13 +58,14 @@
 
 
     <!-- Divider -->
+    <li>
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
       Modulos
     </div>
-
+    </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item active">
       <a class="nav-link" href="inventario.html">
@@ -99,13 +102,14 @@
 
 
     <!-- Divider -->
+    <li>
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-
+    </li>
   </ul>
   <!-- End of Sidebar -->
 
@@ -167,6 +171,7 @@
           <!-- Nav Item - Alerts -->
 
           <!-- Dropdown - Alerts -->
+          <li>
           <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">
@@ -207,8 +212,8 @@
             </a>
             <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
           </div>
-
-
+          </li>
+          <li>
           <!-- Dropdown - Messages -->
           <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                aria-labelledby="messagesDropdown">
@@ -257,11 +262,7 @@
                      alt="...">
                 <div class="status-indicator bg-success"></div>
               </div>
-              <div>
-                <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                  told me that people say this to all dogs, even if they aren't good...</div>
-                <div class="small text-gray-500">Chicken the Dog · 2w</div>
-              </div>
+
             </a>
             <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
           </div>
@@ -274,7 +275,7 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
               <img class="img-profile rounded-circle"
-                   src="img/undraw_profile.svg">
+                   src="img/undraw_profile.svg" alt="img Perfil">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -307,7 +308,7 @@
         <div class="card shadow mb-4">
 
           <div class="card-header py-3">
-            <div id="ventanilla" align="right">
+            <div id="ventanilla">
               <button id="btn-abrir-modal" >Agregar Insumo </button>
               <dialog onclick id="modal">
 
@@ -318,11 +319,11 @@
                   </div>
                   <div class="columna-A">
                     <div class="body-modal">
-                      <label> Nombre </label>
+                      <label for="nombreInsumo"> Nombre </label>
                       <input id="nombreInsumo" type="text" placeholder="" />
                     </div>
                     <div class="body-modal">
-                      <label>Cantidad</label>
+                      <label for="cantidadInsumo">Cantidad</label>
                       <input id="cantidadInsumo" type="text" placeholder="" />
                     </div>
                   </div>
@@ -334,22 +335,15 @@
               </dialog>
             </div>
 
-            <h6 id="txtm-0" class="m-0 font-weight-bold text-primary-">Lista de Insumos</h6>
-          </div>
-
-          <div class="card-header py-3">
-            <div id="ventanillaEditar" align="right">
-
+            <div id="ventanillaEditar">
               <dialog onclick id="modalEditar">
-
                 <form action="#" class="form" >
                   <div>
                     <h2 id="txtTitulo">Editar Insumos</h2>
                   </div>
-
                   <div class="columna-A">
                     <div class="body-modal">
-                      <label>Cantidad</label>
+                      <label for="editarCantidad">Cantidad</label>
                       <input id="editarCantidad" type="text" placeholder="" />
                     </div>
                   </div>
@@ -359,12 +353,13 @@
                   <button id="btn-enviar-editar" onclick="guardarInsumos()">Agregar</button>
                 </div>
               </dialog>
-
             </div>
+
           </div>
+
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="tablaInventario" width="100%" cellspacing="0">
+              <table class="table table-bordered" id="tablaInventario">
                 <thead>
                 <tr>
                   <th>ID</th>

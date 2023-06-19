@@ -27,22 +27,27 @@
 <body id="page-top">
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <li>
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div>
                 <i class="fa-solid fa-heart"></i>
             </div>
             <div class="sidebar-brand-text mx-3">INICIO</div>
         </a>
+
         <hr class="sidebar-divider my-0">
+        </li>
         <li class="nav-item active">
             <a class="nav-link" href="index.html">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>INICIO</span></a>
         </li>
+        <li>
         <hr class="sidebar-divider">
         <div class="sidebar-heading">
             Modulos
         </div>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="inventario.html">
                 <i class="fa-solid fa-kit-medical"></i>
@@ -68,10 +73,12 @@
                 <i class="fa-solid fa-users"></i>
                 <span>USUARIOS</span></a>
         </li>
+        <li>
         <hr class="sidebar-divider d-none d-md-block">
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+        </li>
     </ul>
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
@@ -80,13 +87,14 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
-                    </li>
+                    <li>
                     <div class="topbar-divider d-none d-sm-block"></div>
+                    </li>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="img Perfil">
                         </a>
                     </li>
                 </ul>
@@ -119,9 +127,13 @@
                     </div>
                     <div id="newEventModal">
                         <h2 id="H2t">Nueva Cita</h2>
+                        <label for="idPaciente">ID Paciente</label>
                         <input id="idPaciente" placeholder="ID paciente" />
+                        <label for="fecha">Fecha</label>
                         <input id="fecha" type="date" placeholder="Fecha" />
+                        <label for="hora">Hora</label>
                         <input id="hora" type="time"  placeholder="Hora" />
+                        <label for="tipo">Tipo</label>
                         <input id="tipo" placeholder="Tipo" />
                         <div>
                             <button id="cancelButton">Cancelar</button>
@@ -141,7 +153,7 @@
     </div>
 
 </div>
-</div>
+
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>

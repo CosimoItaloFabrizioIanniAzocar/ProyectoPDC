@@ -20,7 +20,7 @@ async function iniciarSesion (){
     });
     const respuesta = await request.text();
 
-    if (respuesta == "OK"){
+    if (respuesta === "OK"){
         window.location.href = "usuarios.html";
        }else{
         alert("Credenciales incorrectas, por favor intente nuevamente");

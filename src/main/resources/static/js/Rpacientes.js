@@ -19,7 +19,7 @@ const modal=
     document.querySelector("#modal");
 
 btnAbrirModal.addEventListener("click",()=>{
-    modal.showModal(false);
+    modal.showModal();
 })
 
 btnCerrarModal.addEventListener("click",()=>{
@@ -38,12 +38,12 @@ btnCerrarModal.addEventListener("click",()=>{
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
                     let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer(" + item.idPaciente + ")'>Ver</button>";
                     let botonEditar = "<button class='btn btn-info' onclick='editarPaciente(" + item.idPaciente + ")'>Editar</button>";
-                    if (item.sexoPaciente == "1") {
+                    if (item.sexoPaciente === "1") {
                         item.sexoPaciente = "Masculino";
-                    }else if(item.sexoPaciente == "2"){
+                    }else if(item.sexoPaciente === "2"){
                         item.sexoPaciente = "Femenino";
                     }
-                    var row = "<tr>" +
+                    let row = "<tr>" +
                         "<td>" + item.idPaciente + "</td>" +
                         "<td>" + item.nombrePaciente + "</td>" +
                         "<td>" + item.fechaNacimiento + "</td>" +
@@ -156,7 +156,7 @@ function guardarPacienteEdit() {
         })
  }
 
-var fechaActual = new Date().toISOString().split("T")[0];
+let fechaActual = new Date().toISOString().split("T")[0];
 document.getElementById("edadPaciente").max = fechaActual;
 
 function abrirVer(id) {
@@ -176,7 +176,7 @@ function cargarHistorias(id){
         dataType: "json",
         success: function (data) {
             $.each(data, function (i, item) {
-                var row = "<tr>" +
+                let row = "<tr>" +
                     "<td>" + item.idHistoriaClinica + "</td>" +
                     "<td>" + item.idCita + "</td>" +
                     "</tr>";
@@ -194,7 +194,7 @@ function cargarCitasDelPaciente(id){
         dataType: "json",
         success: function (data) {
             $.each(data, function (i, item) {
-                var row = "<tr>" +
+                let row = "<tr>" +
                     "<td>" + item.idCita + "</td>" +
                     "<td>" + item.fecha + "</td>" +
                     "<td>" + item.tipo + "</td>" +

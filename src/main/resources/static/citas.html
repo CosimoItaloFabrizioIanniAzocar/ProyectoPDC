@@ -36,16 +36,18 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
+        <li class="nav-item">
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div>
                 <i class="fa-solid fa-heart"></i>
             </div>
             <div class="sidebar-brand-text mx-3">CITAS  </div>
         </a>
-
+        </li>
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
+        <li class="nav-item">
+            <hr class="sidebar-divider my-0">
+        </li>
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link" href="index.html">
@@ -55,12 +57,14 @@
 
 
         <!-- Divider -->
+        <li>
         <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">
             Modulos
         </div>
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="inventario.html">
@@ -97,13 +101,14 @@
 
 
         <!-- Divider -->
+        <li>
         <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
+        </li>
     </ul>
     <!-- End of Sidebar -->
 
@@ -165,6 +170,7 @@
                     <!-- Nav Item - Alerts -->
 
                     <!-- Dropdown - Alerts -->
+                    <li>
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                          aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">
@@ -205,9 +211,10 @@
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
-
+                    </li>
 
                     <!-- Dropdown - Messages -->
+                    <li>
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                          aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">
@@ -256,24 +263,22 @@
                                 <div class="status-indicator bg-success"></div>
                             </div>
                             <div>
-                                <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                    told me that people say this to all dogs, even if they aren't good...</div>
                                 <div class="small text-gray-500">Chicken the Dog · 2w</div>
                             </div>
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                     </div>
                     </li>
-
+                    <li>
                     <div class="topbar-divider d-none d-sm-block"></div>
-
+                    </li>
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                             <img class="img-profile rounded-circle"
-                                 src="img/undraw_profile.svg">
+                                 src="img/undraw_profile.svg" alt="img Perfil">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -313,37 +318,37 @@
                 <div class="card shadow mb-4">
 
                     <div class="card-header py-3">
-                        <div id="ventanillaEd" align="right">
+                        <div id="ventanillaEd">
                             <dialog onclick id="modal">
                                 <form action="#" class="form" >
                                     <div>
                                     </div>
 
                                     <div class="body-modal">
-                                        <label >Nombre</label>
-                                        <input type="text" placeholder="Nombre Completo" />
+                                        <label for="eNombre" >Nombre</label>
+                                        <input id="eNombre" type="text" placeholder="Nombre Completo" />
                                     </div>
 
                                     <div class="columna-A">
                                         <div class="body-modal">
-                                            <label>Fecha de nacimiento</label>
-                                            <input type="date" placeholder="" />
+                                            <label for="eNacimiento">Fecha de nacimiento</label>
+                                            <input id="eNacimiento" type="date" placeholder="" />
                                         </div>
 
                                         <div class="body-modal" id="select-box">
-                                            <label>Hora</label>
-                                            <input type="time" placeholder="" />
+                                            <label for="eHora">Hora</label>
+                                            <input id="eHora" type="time" placeholder="" />
                                         </div>
                                     </div>
 
                                     <div class="columna-A">
                                         <div class="body-modal">
-                                            <label> Tipo </label>
-                                            <input type="text" placeholder="" />
+                                            <label for="etipo"> Tipo </label>
+                                            <input id="etipo" type="text" placeholder="" />
                                         </div>
                                         <div class="body-modal">
-                                            <label>Estado</label>
-                                            <input type="text" placeholder="" />
+                                            <label for="eEstado">Estado</label>
+                                            <input id="eEstado" type="text" placeholder="" />
                                         </div>
 
                                     </div>
@@ -357,7 +362,7 @@
                             <!--ACA EMPIEZA ALGO NUEVO -->
 
                             <div class="card-header py-3">
-                                <div id="ventanilla" align="right">
+                                <div id="ventanilla" >
                                     <dialog onclick id="modalEd">
 
                                         <form action="#" class="form" >
@@ -367,25 +372,25 @@
                                             </div>
 
                                             <div class="body-modal">
-                                                <label >Nombre</label>
+                                                <label for="editarNombre">Nombre</label>
                                                 <input id="editarNombre" type="text" placeholder="Nombre Completo" />
                                             </div>
 
                                             <div class="columna-A">
                                                 <div class="body-modal">
-                                                    <label>Fecha de nacimiento</label>
+                                                    <label for="editarNacimiento">Fecha de nacimiento</label>
                                                     <input id="editarNacimiento" type="date" placeholder="" />
                                                 </div>
 
                                                 <div class="body-modal" id="select-boxx">
-                                                    <label>Hora</label>
+                                                    <label for="editarHora">Hora</label>
                                                     <input id="editarHora" type="time" placeholder="" />
                                                 </div>
                                             </div>
 
                                             <div class="columna-A">
                                                 <div class="body-modal">
-                                                    <label> Tipo </label>
+                                                    <label for="editarTipo"> Tipo </label>
                                                     <input id="editarTipo" type="text" placeholder="" />
                                                 </div>
                                             </div>
@@ -401,7 +406,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="tablaCitas" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="tablaCitas">
                                 <thead>
                                 <tr>
                                     <th>ID</th>

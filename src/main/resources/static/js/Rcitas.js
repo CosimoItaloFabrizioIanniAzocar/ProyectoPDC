@@ -8,32 +8,7 @@ const modalEd = document.querySelector("#modalEd");
 btnCerrarModalEditar.addEventListener("click",()=>{
     modalEd.close();
 })
-function agregarCita(){
-    let datos = {};
 
-    datos.idPaciente = document.getElementById('idPaciente').value;
-    datos.fecha = document.getElementById('fecha').value;
-    datos.hora = document.getElementById('hora').value;
-    datos.tipo = document.getElementById('tipo').value;
-    datos.estado = false;
-
-
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:8080/api/registrarCita",
-        dataType: "json",
-        success: function (datos) {
-            if(datos==="success") {
-                alert("Paciente resgistrado correctamente");
-            }
-            else {
-                alert("Error al registrar paciente");
-            }
-        }
-
-    })
-
-}
 
 /* Conexion con Citas */
 function cargarCitas() {
@@ -51,13 +26,14 @@ function cargarCitas() {
                     }else if(item.estado === true){
                         item.estado = "Atendida";
                     }
-                    idcita = item.idCita;
+
+                    let botonAtender = "<button class='btn btn-success' onclick='atenderCita(" + item.idPaciente +","+ item.idCita +")'>Atender</button>";
                     if (item.estado === "Pendiente") {
-                        var botonAtender = "<button class='btn btn-success' onclick='atenderCita(" + item.idPaciente +","+ idcita +")'>Atender</button>";
+                         botonAtender = "<button class='btn btn-success' onclick='atenderCita(" + item.idPaciente +","+ item.idCita +")'>Atender</button>";
                     }else if(item.estado === "Atendida"){
-                        var botonAtender = "<button class='btn btn-info' onclick='atenderCita(" + item.idPaciente +","+ idcita+")' disabled>Atendida</button>";
+                         botonAtender = "<button class='btn btn-info' onclick='atenderCita(" + item.idPaciente +","+item.idCita+")' disabled>Atendida</button>";
                     }
-                    var row = "<tr>" +
+                    let row = "<tr>" +
                         "<td>" + item.idCita + "</td>" +
                         "<td>" + item.idPaciente + "</td>" +
                         "<td>" + item.fecha + "</td>" +
@@ -82,7 +58,7 @@ function eliminarCitas(id) {
     $.ajax({
         type: "DELETE",
         url: "http://localhost:8080/api/citas/" + id,
-        success: function (response) {
+        success: function () {
             window.location.reload();
         }
     });

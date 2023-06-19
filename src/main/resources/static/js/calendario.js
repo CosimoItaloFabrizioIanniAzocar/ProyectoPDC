@@ -66,7 +66,7 @@ function load() {
         const dayString = `${month + 1}/${i - paddingDays}/${year}`;
 
         if (i > paddingDays) {
-            daySquare.innerText = i - paddingDays;
+            daySquare.innerText = (i - paddingDays).toString();
             const eventForDay = events.find(e => e.date === dayString);
 
             if (i - paddingDays === day && nav === 0) {
@@ -143,7 +143,7 @@ function cargarPacientes() {
             dataType: "json",
             success: function (data) {
                 $.each(data, function (i, item) {
-                    var row = "<tr>" +
+                    let row = "<tr>" +
                         "<td>" + item.nombrePaciente + "</td>" +
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -180,6 +180,6 @@ function initButtons() {
 initButtons();
 load();
 
-var fechaActual = new Date().toISOString().split("T")[0];
+let fechaActual = new Date().toISOString().split("T")[0];
 document.getElementById("fecha").min = fechaActual;
 

@@ -1,7 +1,13 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
 
-  cargarUsuarios();
+  cargarUsuarios()
+  .then(() => {
+        // Bloque then vacío
+    })
+        .catch(() => {
+        console.log("Error al cargar los usuarios");
+
 
   $('#tablaUsuarios').DataTable();
 });
@@ -51,4 +57,5 @@ async function eliminarUsuario(id){
 
     document.location.reload();
 
+ }
 }

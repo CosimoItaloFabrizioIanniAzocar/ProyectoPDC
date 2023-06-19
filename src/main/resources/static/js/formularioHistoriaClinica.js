@@ -4,27 +4,15 @@ $(document).ready(function () {
 });
 
 function obtenerParametroURL(parametro) {
-    var url = window.location.search.substring(1);
-    var variables = url.split('&');
-    for (var i = 0; i < variables.length; i++) {
-        var par = variables[i].split('=');
+    let url = window.location.search.substring(1);
+    let variables = url.split('&');
+    for (let i = 0; i < variables.length; i++) {
+        let par = variables[i].split('=');
         if (par[0] === parametro) {
             return par[1];
         }
     }
-    return null;
 }
-function crearHistoria(){
-    var id = obtenerParametroURL('id');
-    var idcita = obtenerParametroURL('idcita');
-    window.location.href='formularioConsulta.html?id=' + id+"&idcita="+ idcita;
-}
-function volverConsulta() {
-    var id = obtenerParametroURL('id');
-    var idcita = obtenerParametroURL('idcita');
-    window.location.href='consulta.html?id=' + id+"&idcita="+ idcita;
-}
-
 function registrarHistoria(){
 
     let datos = {};
