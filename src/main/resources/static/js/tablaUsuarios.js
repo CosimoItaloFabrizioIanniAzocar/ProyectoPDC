@@ -1,61 +1,25 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
 
-  cargarUsuarios()
-  .then(() => {
-        // Bloque then vacío
-    })
-        .catch(() => {
-        console.log("Error al cargar los usuarios");
+    cargarUsuarios();
 
+    function cargarUsuarios() {
+        $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/api/usuarios",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        let row = "<tr>" +
+                            "<td>" + item.id + "</td>" +
+                            "<td>" + item.nombre + "</td>" +
+                            "<td>" + item.password + "</td>" +
 
-  $('#tablaUsuarios').DataTable();
-});
-
-async function cargarUsuarios (){
-
-    const request = await fetch("api/usuarios", {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    });
-    const usuariosjson = await request.json();
-
-
-    let listaUsuarios = "";
-    for (let usuario of usuariosjson) {
-        let botonEliminar = '<button type="button" class="btn btn-danger" onclick="eliminarUsuario('+usuario.id+')">Eliminar</button>';
-
-        let usuariohtml = '<tr> <td>' + usuario.id +
-            '</td> <td>' + usuario.nombre +
-            '</td> <td>'+usuario.password+
-            '</td> <td>'+botonEliminar+
-            '</td > </tr>';
-
-
-        listaUsuarios += usuariohtml;
-
-        document.querySelector("#tablaUsuarios").innerHTML = listaUsuarios;
-
+                            "</tr>";
+                        $(row).appendTo("#tablaUsuarios tbody");
+                    });
+                }
+            }
+        )
     }
-}
-
-async function eliminarUsuario(id){
-
-    if(!confirm("¿Está segur@ de eliminar el usuario?")){
-        return;
-    }
-    const request = await fetch("api/usuarios/"+id, {
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-    });
-
-    document.location.reload();
-
- }
-}
+})

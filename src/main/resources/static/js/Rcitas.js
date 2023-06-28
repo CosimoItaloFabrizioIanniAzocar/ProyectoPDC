@@ -32,6 +32,8 @@ function cargarCitas() {
                          botonAtender = "<button class='btn btn-success' onclick='atenderCita(" + item.idPaciente +","+ item.idCita +")'>Atender</button>";
                     }else if(item.estado === "Atendida"){
                          botonAtender = "<button class='btn btn-info' onclick='atenderCita(" + item.idPaciente +","+item.idCita+")' disabled>Atendida</button>";
+                         botonEditar = "<button class='btn btn-warning' onclick='editarCitas(" + item.idCita + ")' disabled>Editar</button>";
+                         botonEliminar = "<button class='btn btn-danger' onclick='eliminarCitas(" + item.idCita + ")' disabled>Eliminar</button>";
                     }
                     let row = "<tr>" +
                         "<td>" + item.idCita + "</td>" +
@@ -52,14 +54,39 @@ function cargarCitas() {
 
 }
 function eliminarCitas(id) {
-    if (!confirm("¿Está seguro que desea eliminar la cita?")) {
-        return;
-    }
-    $.ajax({
-        type: "DELETE",
-        url: "http://localhost:8080/api/citas/" + id,
-        success: function () {
-            window.location.reload();
+    Swal.fire({
+        title: "Confirmación",
+        text: "¿Está seguro que desea eliminar la cita?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar",
+        cancelButtonColor: "#3085d6"
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:8080/api/citas/" + id,
+                success: function () {
+                    Swal.fire({
+                        title: "Éxito",
+                        text: "La cita ha sido eliminada",
+                        icon: "success",
+                        confirmButtonText: "Aceptar"
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Hubo un problema al eliminar la cita",
+                        icon: "error",
+                        confirmButtonText: "Aceptar"
+                    });
+                }
+            });
         }
     });
 }

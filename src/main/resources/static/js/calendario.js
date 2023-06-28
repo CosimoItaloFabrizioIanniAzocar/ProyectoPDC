@@ -127,7 +127,7 @@ function saveEvent() {
                 }
                          events.push({
                             date: clicked,
-                            title: nombrePaciente+ ' / ' + fecha.value,
+                            title: hora.value + ' / ' + fecha.value,
                         });
                     localStorage.setItem('events', JSON.stringify(events));
                     closeModal();

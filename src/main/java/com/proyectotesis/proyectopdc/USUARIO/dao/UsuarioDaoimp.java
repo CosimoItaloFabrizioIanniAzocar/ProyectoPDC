@@ -52,4 +52,18 @@ public class UsuarioDaoimp implements UsuarioDao{
         return argon2.verify(contrasenaHasheada,usuario.getPassword());
 
     }
+
+    @Override
+    public Usuario buscarUsuario(int id) {
+        return entityManager.find(Usuario.class,id);
+    }
+
+    @Override
+    public void editarUsuario(int id, Usuario usuario) {
+        Usuario usuarioExistente= entityManager.find(Usuario.class, id);
+        if(usuarioExistente!=null) {
+            usuario.setId(id);
+            entityManager.merge(usuario);
+        }
+    }
 }

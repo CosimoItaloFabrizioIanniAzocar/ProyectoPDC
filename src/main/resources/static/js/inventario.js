@@ -66,14 +66,39 @@ function cargarInventario() {
 }
 
 function eliminarInsumo(id) {
-    if (!confirm("¿Está seguro que desea eliminar este Insumo?")) {
-        return;
-    }
-    $.ajax({
-        type: "DELETE",
-        url: "http://localhost:8080/api/eliminarInsumo/" + id,
-        success: function () {
-            window.location.reload();
+    Swal.fire({
+        title: "Confirmación",
+        text: "¿Está seguro que desea eliminar este Insumo?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No",
+        cancelButtonColor: "#3085d6",
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:8080/api/eliminarInsumo/" + id,
+                success: function () {
+                    Swal.fire({
+                        title: "Éxito",
+                        text: "El insumo ha sido eliminado",
+                        icon: "success",
+                        confirmButtonText: "Aceptar"
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Hubo un problema al eliminar el insumo",
+                        icon: "error",
+                        confirmButtonText: "Aceptar"
+                    });
+                }
+            });
         }
     });
 }

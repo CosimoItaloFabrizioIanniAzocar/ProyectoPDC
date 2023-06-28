@@ -36,8 +36,9 @@ btnCerrarModal.addEventListener("click",()=>{
             success: function (data) {
                 $.each(data, function (i, item) {
                     let botonEliminar = "<button class='btn btn-danger' onclick='eliminarPaciente(" + item.idPaciente + ")'>Eliminar</button>";
-                    let botonVer = "<button class='btn btn-warning btn-verPaciente' onclick='abrirVer(" + item.idPaciente + ")'>Ver</button>";
-                    let botonEditar = "<button class='btn btn-info' onclick='editarPaciente(" + item.idPaciente + ")'>Editar</button>";
+                    let botonEditar = "<button class='btn btn-warning' onclick='editarPaciente(" + item.idPaciente + ")'>Editar</button>";
+                    let botonVer = "<button class='btn btn-info btn-verPaciente' onclick='abrirVer(" + item.idPaciente + ")'>Ver</button>";
+
                     if (item.sexoPaciente === "1") {
                         item.sexoPaciente = "Masculino";
                     }else if(item.sexoPaciente === "2"){
@@ -54,7 +55,7 @@ btnCerrarModal.addEventListener("click",()=>{
                         "<td>" + item.direccionPaciente + "</td>" +
                         "<td>" + item.telefonoPaciente + "</td>" +
                         "<td>" + item.emailPaciente + "</td>" +
-                        "<td>" + botonEliminar+ " "+botonVer+ " "+botonEditar+"</td>" +
+                        "<td>" + botonEliminar+ " "+botonEditar+ " "+botonVer+"</td>" +
 
                         "</tr>";
                     $(row).appendTo("#tablaPacientes tbody");
@@ -64,18 +65,34 @@ btnCerrarModal.addEventListener("click",()=>{
     )
 }
 
-    function eliminarPaciente(id) {
-        if (!confirm("¿Está seguro que desea eliminar el paciente?")) {
-            return;
+function eliminarPaciente(id) {
+    Swal.fire({
+        title: 'Eliminar paciente',
+        text: '¿Está seguro que desea eliminar el paciente?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:8080/api/pacientes/" + id,
+                success: function () {
+                    Swal.fire({
+                        title: 'Paciente eliminado',
+                        text: 'El paciente ha sido eliminado correctamente',
+                        icon: 'success'
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                }
+            });
         }
-        $.ajax({
-            type: "DELETE",
-            url: "http://localhost:8080/api/pacientes/" + id,
-            success: function () {
-                window.location.reload();
-            }
-        });
-    }
+    });
+}
 
 let idPacientes = null;
 function  editarPaciente (id){
@@ -117,15 +134,28 @@ function guardarPacienteEdit() {
 
     $.ajax({
         type: "PUT",
-        url: "http://localhost:8080/api/editarPaciente/"+idPacientes,
+        url: "http://localhost:8080/api/editarPaciente/" + idPacientes,
         data: JSON.stringify(datos),
         contentType: "application/json",
         success: function () {
-            alert("Paciente editado correctamente");
-            window.location.reload();
+            Swal.fire({
+                title: "Éxito",
+                text: "Paciente editado correctamente",
+                icon: "success",
+                confirmButtonText: "Aceptar"
+            }).then(function() {
+                window.location.reload();
+            });
+        },
+        error: function () {
+            Swal.fire({
+                title: "Error",
+                text: "Hubo un problema al editar el paciente",
+                icon: "error",
+                confirmButtonText: "Aceptar"
+            });
         }
-
-    })
+    });
 }
 
 //*agregar paciente*//

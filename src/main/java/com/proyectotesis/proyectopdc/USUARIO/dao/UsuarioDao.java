@@ -13,6 +13,10 @@ public interface UsuarioDao {
     void registrarUsuarios(Usuario usuario);
 
     boolean verificaCredenciales(Usuario usuario);
+
+    Usuario buscarUsuario(int id);
+
+    void editarUsuario(int id, Usuario usuario);
 }
 
 

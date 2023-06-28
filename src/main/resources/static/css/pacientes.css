@@ -31,17 +31,21 @@
 /*MODAL Y FORMULARIO*/
 
 /*MODAL*/
-#modal::backdrop, #modalEditar::backdrop, #modalEd::backdrop{
+#modal::backdrop, #modalEditar::backdrop, #modalEd::backdrop, #modalEdP::backdrop,#modalVer::backdrop,#modal-adm::backdrop{
     background-color:rgba(0,0,0,.55);
 
 
 }
 
-#modal, #modalEditar, #modalEd{
+#modal, #modalEditar, #modalEd,#modalVer,#modal-adm{
     max-width:50ch;
 
 }
-#modal, #modalEditar, #modalEd{
+#modalEdP {
+    max-width: 100ch;
+}
+
+#modal, #modalEditar, #modalEd , #modalEdP,#modalVer{
     top:1%;
     width: 75%;
     margin : 0 auto;
@@ -50,7 +54,7 @@
 
 
 }
-#btn-abrir-modal{
+#btn-abrir-modal,#btn-Salir{
 
     background-color: #742484;
     padding:5px 15px;
@@ -58,12 +62,12 @@
     color:  white;
 }
 
-#btn-abrir-modal:hover{
+#btn-abrir-modal:hover,#btn-Salir:hover{
     background-color: #742484;
     color: white;
 }
 
-#btn-cerrar-modal, #btn-cerrar-editar,#btn-cerrar-edModal,#btn-enviar-edModal{
+#btn-enviar-edModal,#btnCerrar,#btn-enviar-modal-adm{
 
     background-color: #742484;
     padding:5px 15px;
@@ -99,7 +103,7 @@
     color:#333;
 
 }
-.form :where(.body-modal input, #select-box select) {
+.form :where(.body-modal input, #select-box select){
     position: relative;
     height: 50px;
     width: 100%;
@@ -127,16 +131,37 @@
 
 }
 
-#txtTitulo{
+#txtTitulo, #txtTitulo2,#txttituloHistorial,#txttituloHistorial2,#txtfor{
     border-style: solid;
+    text-align: center;
+    font-size: 150%;
+    border-radius: 5px;
+
 }
-#txttitulohistorial{
-    border-style: solid;
-}
-#txttitulohistorial2{
-    border-style: solid;
+#txttituloHistorial,#txttituloHistorial2{
+    margin-left: 5px;
 }
 
 
 
+#btn-cerrar-edModalP,#btn-cerrar-editar,#btn-cerrar-edModa,#btn-cerrar-modal,#btn-cerrar-edModal,#botonCancelarVer,#btn-cerrar-modal-adm{
+    color: white;
+    background-color: red;
+    padding:5px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.body-modal-adm {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #dddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
 

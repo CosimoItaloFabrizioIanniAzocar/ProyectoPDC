@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilologin.css">
+    <link rel="stylesheet" href="css/pacientes.css">
 
 </head>
 
@@ -44,37 +45,59 @@
                                 </div>
                                 <form class="user">
                                     <div class="form-group">
-                                        <label for="txtnombre">Usuario</label>
+                                        <label for="txtnombre" class="text-white">Usuario</label>
                                         <input type="email" class="form-control form-control-user"
                                                id="txtnombre" aria-describedby="emailHelp"
                                                placeholder="Nombre Completo">
                                     </div>
                                     <div class="form-group">
-                                        <label for="txtpassword">Contraseña</label>
+                                        <label for="txtpassword" class="text-white">Contraseña</label>
                                         <input type="password" class="form-control form-control-user"
                                                id="txtpassword" placeholder="Contraseña">
                                     </div>
-                                    <a onclick="iniciarSesion()" href="#" class="btn btn-primary btn-user btn-block">
-                                        Iniciar Sesión
-                                    </a>
-                                    <hr>
+                                    <a onclick="iniciarSesion()" href="#" class="btn btn-primary btn-user btn-block">Iniciar Sesión</a>
+                                    <a class="btn btn-primary btn-user btn-block" id="btn-abrir-modal-adm" >Administracion</a>
 
+                                    <dialog onclick id="modal-adm">
+                                        <form action="#" class="form" >
+                                            <div>
+                                                <h2 id="txtfor">Iniciar Sesion </h2>
+                                            </div>
+
+                                            <div class="body-modal-adm">
+                                                <label for="nombreUsuarioo">Usuario Administrador</label>
+                                                <input id="nombreUsuarioo" type="text" placeholder="" />
+                                            </div>
+
+                                            <div class="body-modal-adm">
+                                                <label for="contraseñaUsuario">Contraseña</label>
+                                                <input id="contraseñaUsuario" type="password" placeholder="" />
+                                            </div>
+                                        </form>
+                                        <div>
+                                            <button id="btn-cerrar-modal-adm">Cancelar</button>
+                                            <button id="btn-enviar-modal-adm" onclick="abrirPanel()">Ingresar</button>
+                                        </div>
+                                    </dialog>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                                    <hr class="text-white">
+
+
                                 <hr>
-                                <div class="text-center">
-                                    <a id="txtcrearc" class="small" href="registro.html">Crear cuenta</a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
 
-    </div>
 
-</div>
+
+
+
 
             <!-- Bootstrap core JavaScript-->
             <script src="vendor/jquery/jquery.min.js"></script>

@@ -31,29 +31,19 @@ public class UsuarioController {
         usuarioDao.registrarUsuarios(usuario);
     }
 
-    @RequestMapping(value ="api/editarUsuario" ,method = RequestMethod.GET)
-    public Usuario editarUsuario(){
+    @RequestMapping(value ="api/editarUsuario/{id}" ,method = RequestMethod.PUT)
+    public void editarUsuario(@PathVariable int id, @RequestBody Usuario usuario){
+        usuario.setId(id);
+        usuarioDao.editarUsuario(id,usuario);
 
-        Usuario usuario = new Usuario();
-
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        return usuario;
     }
 
     @RequestMapping(value = "api/usuarios/{id}",method = RequestMethod.DELETE)
     public void eliminarUsuario(@PathVariable int id){usuarioDao.eliminar(id);}
 
-    @RequestMapping("api/prueba3")
-    public Usuario buscarUsuario(){
-
-        Usuario usuario = new Usuario();
-
-        usuario.setNombre("Juan");
-        usuario.setPassword("1234");
-
-        return usuario;
+    @RequestMapping(value ="api/buscarUsuario/{id}",method = RequestMethod.GET)
+    public Usuario buscarUsuario(@PathVariable int id){
+        return usuarioDao.buscarUsuario(id);
     }
 
 

@@ -160,7 +160,6 @@
                         <div id="ventanilla">
                             <button id="btn-abrir-modal" >Agregar Paciente </button>
                             <dialog onclick id="modal">
-
                                 <form action="#" class="form" >
 
                                     <div>
@@ -227,7 +226,7 @@
                             </dialog>
 
                         </div>
-                            <div id="ventanillaEditar" >
+                            <div id="ventanillaVer" >
                                 <dialog onclick id="modalVer">
                                     <form action="#" class="form" >
                                         <div>
@@ -235,7 +234,7 @@
                                         </div>
                                         <div class="contenidoModal">
                                         <div class="columna-B">
-                                            <h2 id="txttitulohistorial"> Historial Clinico </h2>
+                                            <h2 id="txttituloHistorial"> Historial Clinico </h2>
                                             <div class="body-modal">
                                                 <div class="table-responsive">
                                                     <table class="table table-bordered" id="historiaClinica" >
@@ -252,7 +251,7 @@
                                             </div>
                                         </div>
                                         <div class="columna-B">
-                                            <h2 id="txttitulohistorial2"> Historial de citas </h2>
+                                            <h2 id="txttituloHistorial2"> Historial de citas </h2>
                                             <div class="body-modal">
                                                 <div class="table-responsive">
                                                     <table class="table table-bordered" id="tablaCitas" >
@@ -274,7 +273,7 @@
                                      </div>
                                     </form>
                                     <div>
-                                        <button class="btn-cerrar-Ver" onclick="cerrarVer()">Cerrar</button>
+                                        <button class="btn-cerrar-Ver" id="botonCancelarVer" onclick="cerrarVer()">Cerrar</button>
                                     </div>
                                 </dialog>
 
@@ -334,7 +333,7 @@
                                     </form>
                                     <div>
                                         <button id="btn-cerrar-edModalP">Cancelar</button>
-                                        <button id="btn-enviar-edModal"  onclick="guardarPacienteEdit()">Agregar</button>
+                                        <button id="btn-enviar-edModal"  onclick="guardarPacienteEdit()">Aceptar</button>
                                     </div>
                                 </dialog>
                             </div>
@@ -418,6 +417,7 @@
 
             <!--JS MODAL -->
             <script src="js/Rpacientes.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
