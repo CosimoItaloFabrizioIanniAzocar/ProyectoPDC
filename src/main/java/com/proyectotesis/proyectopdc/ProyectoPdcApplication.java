@@ -30,6 +30,8 @@ public class ProyectoPdcApplication {
 
         // Prueba SonarCloud
         // Prueba SonarCloud
+        // Prueba SonarCloud
+        // Prueba SonarCloud
         List<Cita> citas = obtenerCitasProximaSemana();
 
         // Crear cuerpo del mensaje
