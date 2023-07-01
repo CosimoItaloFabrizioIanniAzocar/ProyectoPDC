@@ -28,6 +28,8 @@ public class ProyectoPdcApplication {
     @EventListener(ApplicationReadyEvent.class)
     public void triggerMail() throws MessagingException {
 
+        // Prueba SonarCloud
+        // Prueba SonarCloud
         List<Cita> citas = obtenerCitasProximaSemana();
 
         // Crear cuerpo del mensaje
