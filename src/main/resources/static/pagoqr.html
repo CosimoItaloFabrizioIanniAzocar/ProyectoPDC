@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<head>
+  <meta charset="UTF-8" >
+  <title>Spring Boot MySQL Image Upload / View</title>
+  <!-- Bootstrap CSS -->
+</head>
+<body>
+
+<!-- Página de carga de imágenes -->
+<form action="/guardarImagen" method="post" enctype="multipart/form-data">
+  <input type="file" name="archivo" required>
+  <button type="submit">Guardar imagen</button>
+</form>
+
+<!-- Página principal que muestra las imágenes -->
+<div>
+  <h1>Imágenes</h1>
+  <table class="table table-bordered" id="tablaQrs" >
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Link</th>
+      <th>Tipo</th>
+      <th>Nombre</th>
+      <th>QR</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<script src="js/pagoqr.js"></script>
+</body>
+</html>
