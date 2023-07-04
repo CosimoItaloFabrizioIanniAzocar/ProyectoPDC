@@ -166,43 +166,31 @@
             <div id="ventanilla">
               <button id="btn-abrir-modal" >Agregar Un Pago </button>
               <dialog onclick id="modal">
-                <form action="#" class="form" >
+                <div>
+                  <h2 id="txtfor">Formulario de Pago</h2>
+                </div>
 
-                  <div>
-                    <h2 id="txtfor">Formulario de Pago</h2>
-                  </div>
-
-                  <div class="body-modal">
-                    <label for="Id_QR">ID QR</label>
-                    <input id="Id_QR" type="text" placeholder="ID QR" />
-                  </div>
-
-                  <div class="body-modal">
-                    <label for="link_QR">Link QR</label>
-                    <input id="link_QR" type="text" placeholder="Link QR" />
-                  </div>
-
-                  <div class="body-modal">
-                    <label for="tipo_consulta">Tipo de consulta</label>
-                    <input id="tipo_consulta" type="text" placeholder="Tipo de consulta" />
-                  </div>
-
-                  <div class="body-modal">
-                    <label for="nombre_QR">Nombre QR</label>
-                    <input id="nombre_QR" type="text" placeholder="Nombre QR" />
-                  </div>
-
-                  <div class="body-modal">
-                    th:action="@{/upload}" th:object="${imageForm}" method="post" enctype="multipart/form-data
-                    <input type="file" id="imageFile" name="imageFile">
-                    <input type="submit" value="Upload">
-                  </div>
+                <div class="body-modal">
+                  <label for="linkQr">Link QR</label>
+                  <input id="linkQr" type="text" name="linkQr" placeholder="Link QR" />
+                </div>
+                <div class="body-modal">
+                  <label for="MontoQr">Monto</label>
+                  <input id="MontoQr" type="text" name="MontoQr" placeholder="Monto" />
+                </div>
+                <div class="body-modal">
+                  <label for="TipoDeConsulta">Tipo de consulta</label>
+                  <input id="TipoDeConsulta" type="text" name="TipoDeConsulta" placeholder="Tipo de consulta" />
+                </div>
 
 
+                <form id="formularioImagen" enctype="multipart/form-data">
+                  <input id="selecionArchivo" type="file" name="archivo" required>
                 </form>
+
                 <div>
                   <button id="btn-cerrar-modal">Cancelar</button>
-                  <button id="btn-enviar-modal" onclick="agregarPaciente()">Agregar</button>
+                  <button id="btn-enviar-modal" onclick="guardarDatos()">Guardar</button>
                 </div>
               </dialog>
 
@@ -322,11 +310,12 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="tablaPacientes" >
+              <table class="table table-bordered" id="tablaQrs" >
                 <thead>
                 <tr>
                   <th>ID QR</th>
                   <th>Link QR</th>
+                  <th>Monto</th>
                   <th>Tipo de consulta</th>
                   <th>Nombre QR</th>
                   <th>Imagen QR</th>
@@ -392,8 +381,9 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!--JS MODAL -->
-<script src="js/Pago.js"></script>
+<script src="js/pagoqr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </body>
 

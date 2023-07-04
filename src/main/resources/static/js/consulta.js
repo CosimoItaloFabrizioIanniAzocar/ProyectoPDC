@@ -6,6 +6,20 @@ $(document).ready(function () {
 
 });
 
+const btnAbrirModalHistoria=
+    document.querySelector("#btnFinalizar");
+const btnCerrarModalHistoria=
+    document.querySelector("#btn-cerrar-modalHistoria");
+const modal=
+    document.querySelector("#modalHitoria");
+
+btnAbrirModalHistoria.addEventListener("click",()=>{
+    modal.showModal();
+})
+
+btnCerrarModalHistoria.addEventListener("click",()=>{
+    modal.close();
+})
 
 
 
@@ -99,24 +113,7 @@ function citaAtendida() {
         url: "http://localhost:8080/api/citaAtendida/" + id,
         contentType: "application/json",
         success: function () {
-            Swal.fire({
-                title: "¡Éxito!",
-                text: "Cita atendida correctamente",
-                icon: "success",
-                showConfirmButton: true,
-                confirmButtonText: "Aceptar"
-            }).then(function () {
-                window.location.href = 'citas.html';
-            });
-        },
-        error: function () {
-            Swal.fire({
-                title: "¡Error!",
-                text: "Error al atender la cita",
-                icon: "error",
-                showConfirmButton: true,
-                confirmButtonText: "Aceptar"
-            });
+            window.location.href = 'citas.html';
         }
     });
 
@@ -133,6 +130,31 @@ function crearHistoria(){
     let id = obtenerParametroURL('id');
     let idcita = obtenerParametroURL('idcita');
     window.location.href='formularioConsulta.html?id=' + id+"&idcita="+ idcita;
+}
+
+function mostrarQr() {
+    let id = obtenerParametroURL('id');
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/api/asignarQr/" + id,
+        dataType: "json",
+        success: function(data) {
+            let item = data;
+            let imagenHtml = "<img src='http://localhost:8080/imagenes/" + item.id + "' alt='" + item.nombreQr + "' width='300'>";
+            let row4 = "<tr>" +
+                "<td>" + item.id + "</td>" +
+                "<td>" + item.linkQr + "</td>" +
+                "<td>" + "$" + item.montoQr + "</td>" +
+                "<td>" + item.tipoConsulta + "</td>" +
+                "<td>" + item.nombreQr + "</td>" +
+                "<td>" + imagenHtml + "</td>" +
+                "</tr>";
+            $(row4).appendTo("#tablaQr tbody");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error al mostrar QR:", error);
+        }
+    });
 }
 
 

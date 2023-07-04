@@ -77,7 +77,7 @@
 
 
 }
-#btn-enviar-modal, #btn-enviar-editar{
+#btn-enviar-modal, #btn-enviar-editar,#guardarImagen{
     background-color: #742484;
     padding:5px 15px;
     border-radius: 5px;
@@ -164,4 +164,6 @@
     border-radius: 6px;
     padding: 0 15px;
 }
-
+#formularioImagen{
+    margin-top: 10px;
+}

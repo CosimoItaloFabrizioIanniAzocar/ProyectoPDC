@@ -23,7 +23,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/Usuario.css">
     <link rel="stylesheet" href="css/consulta.css">
-    <link href="https://code.jquery.com/jquery-3.6.4.min.js">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -108,8 +108,33 @@
                         <div id="ventanilla">
 
                             <button type="button"  id="btn-historiaClinica" onclick="crearHistoria()">Añadir Historia Clinica</button>
-
                             <button type="button" class="btn btn-primary" id ="btn-verHistoria" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@getbootstrap">Ver Historias</button>
+                            <div id="ventanillaHitoria">
+                                <dialog onclick id="modalHitoria">
+                                    <div>
+                                        <h2 id="txtHistoria">Formulario de Pago</h2>
+                                    </div>
+                                    <table class="table table-bordered" id="tablaQr" >
+                                        <thead>
+                                        <tr>
+                                            <th>ID QR</th>
+                                            <th>Link QR</th>
+                                            <th>Monto</th>
+                                            <th>Tipo de consulta</th>
+                                            <th>Nombre QR</th>
+                                            <th>Imagen QR</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <button id="btn-cerrar-modalHistoria">Cancelar</button>
+                                        <button id="btn-enviar-modalHistoria" onclick="citaAtendida()">Confirmar</button>
+                                    </div>
+                                </dialog>
+                                </div>
+
                             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -234,7 +259,7 @@
                                 </div>
                             </dialog>
 
-                            <button id="btnFinalizar" onclick="citaAtendida()">Finalizar Atención</button>
+                            <button id="btnFinalizar" onclick="mostrarQr()">Finalizar Atención</button>
                         </div>
 
                     </div>

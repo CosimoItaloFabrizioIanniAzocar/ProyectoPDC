@@ -12,6 +12,8 @@ public class PagosQr {
     private Long id;
     @Getter @Setter @Column(name = "link_qr")
     private String linkQr;
+    @Getter @Setter @Column(name = "monto_qr")
+    private float montoQr;
     @Getter @Setter @Column(name = "tipo_consulta")
     private String tipoConsulta;
     @Getter @Setter @Column(name = "nombre_qr")
