@@ -116,7 +116,7 @@ function volverLogin(){
 }
 
 
-function  editarUsuario (id){
+function  editarUsuario1 (id){
 
     $.ajax({
         type: "GET",
@@ -135,7 +135,7 @@ function  editarUsuario (id){
 }
 
 
-function guardarPacienteEAdm() {
+function editarUsuario() {
     let datos = {};
     UserId = document.getElementById('idDeUsuario').value;
     datos.nombre = $("#editarNombreAdm").val();

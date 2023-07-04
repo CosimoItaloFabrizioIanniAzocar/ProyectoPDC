@@ -63,6 +63,4 @@ async function iniciarSesion (){
          }
 
      })
-
-
 }

@@ -117,13 +117,14 @@ function agregarInsumo(){
         contentType: "application/json",
         success: function (datos) {
             if(datos==="success") {
-                alert("Insumo agregado correctamentea");
+                alert("Insumo agregado correctamente");
             }
             window.location.reload();
         }
 
     })
 }
+
 let Idinsumo = null;
 function editarInsumo(id) {
      Idinsumo = id;
@@ -140,33 +141,41 @@ function editarInsumo(id) {
     })
 }
 
-    function guardarInsumos (){
+function guardarInsumos() {
     let datos = {};
     datos.cantidad = document.getElementById('editarCantidad').value;
-        $.ajax({
-            type: "PUT",
-            url: "http://localhost:8080/api/actualizarCantidad/" + Idinsumo,
-            data: JSON.stringify(datos),
-            contentType: "application/json",
-            success: function (data) {
-                $("#editarCantidad").val(data.cantidad);
-                datos.estado = document.getElementById('estadotxt').value;
-                $.ajax({
-                    type: "PUT",
-                    url: "http://localhost:8080/api/getEstado/" + Idinsumo,
-                    data: JSON.stringify(datos),
-                    contentType: "application/json",
-                    success: function (data) {
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/api/actualizarCantidad/" + Idinsumo,
+        data: JSON.stringify(datos),
+        contentType: "application/json",
+        success: function (data) {
+            $("#editarCantidad").val(data.cantidad);
+            datos.estado = document.getElementById('estadotxt').value;
+
+            $.ajax({
+                type: "PUT",
+                url: "http://localhost:8080/api/getEstado/" + Idinsumo,
+                data: JSON.stringify(datos),
+                contentType: "application/json",
+                success: function (data) {
                     $("#estadotxt").val(data.estado);
-                    window.location.reload();
-                    }
-                })
-                alert("Insumo editado correctamente");
-            }
-        })
-
+                    modalEditar.close();
+                    Swal.fire({
+                        title: "¡Éxito!",
+                        text: "Insumo editado correctamente",
+                        icon: "success",
+                        showConfirmButton: true,
+                        confirmButtonText: "Aceptar"
+                    }).then(function () {
+                        window.location.reload();
+                    });
+                }
+            });
+        }
+    });
 }
-
 
 
 

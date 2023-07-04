@@ -138,6 +138,7 @@ function guardarPacienteEdit() {
         data: JSON.stringify(datos),
         contentType: "application/json",
         success: function () {
+            modalEdP.close();
             Swal.fire({
                 title: "Éxito",
                 text: "Paciente editado correctamente",
@@ -174,17 +175,24 @@ function guardarPacienteEdit() {
       datos.emailPaciente = document.getElementById('emailPaciente').value;
 
      $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/api/registrarPaciente",
-            data: JSON.stringify(datos),
-            contentType: "application/json",
-            success: function () {
-                    alert("Paciente resgistrado correctamente");
-                window.location.reload();
-            }
-
-        })
- }
+         type: "POST",
+         url: "http://localhost:8080/api/registrarPaciente",
+         data: JSON.stringify(datos),
+         contentType: "application/json",
+         success: function () {
+             modal.close();
+             Swal.fire({
+                 title: "¡Éxito!",
+                 text: "Paciente registrado correctamente",
+                 icon: "success",
+                 showConfirmButton: true,
+                 confirmButtonText: "Aceptar"
+             }).then(function () {
+                 window.location.reload();
+             });
+         }
+     });
+    }
 
 let fechaActual = new Date().toISOString().split("T")[0];
 document.getElementById("edadPaciente").max = fechaActual;

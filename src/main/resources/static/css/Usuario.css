@@ -155,7 +155,7 @@
     padding:5px 15px;
     border-radius: 5px;
 }
-#btn-historiaClinica{
+#btn-historiaClinica,#btnGuardarHistoria{
     background-color: #742484;
     color:  white;
 

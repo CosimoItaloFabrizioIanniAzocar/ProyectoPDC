@@ -92,17 +92,33 @@ function citasPaciente() {
     })
 }
 
-function citaAtendida (){
+function citaAtendida() {
     let id = obtenerParametroURL('idcita');
     $.ajax({
         type: "PUT",
         url: "http://localhost:8080/api/citaAtendida/" + id,
         contentType: "application/json",
         success: function () {
-            window.location.href='citas.html';
-            alert("Cita atendida correctamente")
+            Swal.fire({
+                title: "¡Éxito!",
+                text: "Cita atendida correctamente",
+                icon: "success",
+                showConfirmButton: true,
+                confirmButtonText: "Aceptar"
+            }).then(function () {
+                window.location.href = 'citas.html';
+            });
+        },
+        error: function () {
+            Swal.fire({
+                title: "¡Error!",
+                text: "Error al atender la cita",
+                icon: "error",
+                showConfirmButton: true,
+                confirmButtonText: "Aceptar"
+            });
         }
-    })
+    });
 
     $.ajax({
         type: "PUT",
@@ -110,9 +126,7 @@ function citaAtendida (){
         contentType: "application/json",
         success: function (data) {
         }
-    })
-
-
+    });
 }
 
 function crearHistoria(){
