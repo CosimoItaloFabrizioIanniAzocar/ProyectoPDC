@@ -39,7 +39,7 @@ public class PagosQrController {
     }
 
     @PostMapping("/guardarImagen")
-    public String guardarImagen(@RequestParam("archivo") MultipartFile archivo,@RequestParam("linkQr")String linkqr, @RequestParam("MontoQr")float montoqr,@RequestParam("TipoDeConsulta")String tipoConsulta) throws IOException {
+    public void guardarImagen(@RequestParam("archivo") MultipartFile archivo,@RequestParam("linkQr")String linkqr, @RequestParam("MontoQr")float montoqr,@RequestParam("TipoDeConsulta")String tipoConsulta) throws IOException {
         PagosQr pagosqr = new PagosQr();
         pagosqr.setLinkQr(linkqr);
         pagosqr.setMontoQr(montoqr);
@@ -47,7 +47,6 @@ public class PagosQrController {
         pagosqr.setNombreQr(archivo.getOriginalFilename());
         pagosqr.setImagenQr(archivo.getBytes());
         imagenRepository.save(pagosqr);
-        return "redirect:/pagoqr.html";
     }
     @DeleteMapping("/eliminarImagen/{id}")
     public void eliminarImagen(@PathVariable Long id) {

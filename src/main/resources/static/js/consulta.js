@@ -133,7 +133,7 @@ function crearHistoria(){
 }
 
 function mostrarQr() {
-    let id = obtenerParametroURL('id');
+    let id = obtenerParametroURL('idcita');
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/api/asignarQr/" + id,

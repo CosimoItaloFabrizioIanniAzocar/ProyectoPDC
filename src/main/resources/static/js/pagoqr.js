@@ -47,11 +47,13 @@ function guardarDatos() {
     var archivo = document.getElementById('selecionArchivo').files[0];
     var linkQr = document.getElementById('linkQr').value;
     var MontoQr = document.getElementById('MontoQr').value;
+    var TipoDeConsulta = document.getElementById('TipoDeConsulta').value;
 
     var formData = new FormData();
     formData.append('archivo', archivo);
     formData.append('linkQr', linkQr);
     formData.append('MontoQr', MontoQr);
+    formData.append('TipoDeConsulta', TipoDeConsulta);
 
     $.ajax({
         type: "POST",
