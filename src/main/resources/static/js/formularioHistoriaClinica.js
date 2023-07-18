@@ -74,24 +74,9 @@ function registrarHistoria(){
         contentType: "application/json",
         data: JSON.stringify(datos),
         success: function (datos) {
-            Swal.fire({
-                title: "¡Éxito!",
-                text: "Historia Clínica registrada",
-                icon: "success",
-                showConfirmButton: true,
-                confirmButtonText: "aceptar"
-            }).then(function () {
-                window.location.href = 'consulta.html?id=' + datos.idPaciente + "&idcita=" + datos.idCita;
-            });
         },
-        error: function () {
-            Swal.fire({
-                title: "¡Error!",
-                text: "Error al registrar la Historia Clínica",
-                icon: "error",
-                showConfirmButton: true,
-                confirmButtonText: "aceptar"
-            });
-        }
+
     });
+
+    window.location.href = 'consulta.html?id=' + datos.idPaciente + "&idcita=" + datos.idCita;
 }

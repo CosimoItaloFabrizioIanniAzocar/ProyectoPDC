@@ -108,7 +108,22 @@ function agregarInsumo(){
 
     datos.nombre = document.getElementById('nombreInsumo').value;
     datos.cantidad = document.getElementById('cantidadInsumo').value;
-    datos.estado = "no disponible";
+
+
+    switch (true) {
+        case datos.cantidad <= 0:
+            datos.estado = 'Agotado';
+            break;
+        case datos.cantidad >= 50:
+            datos.estado = 'Suficiente';
+            break;
+        case datos.cantidad < 50:
+            datos.estado = 'Poco Stock';
+            break;
+
+        default:
+            datos.estado = '';
+    }
 
     $.ajax({
         type: "POST",
